@@ -61,6 +61,11 @@ class SmokeTest(unittest.TestCase):
     def tearDownClass(cls) -> None:
         cls._tmp.cleanup()
 
+    def test_corpus_ascii(self) -> None:
+        for p in sorted(self.corpus.glob("*.txt")):
+            with self.subTest(doc=p.name):
+                self.assertTrue(p.read_bytes().isascii())
+
     def test_corpus_reprodutivel(self) -> None:
         again = self.tmp / "corpus_again"
         generate_corpus(again, docs=6, size_mb=1.5, seed=7)
@@ -82,9 +87,9 @@ class SmokeTest(unittest.TestCase):
                 self.assertEqual(st.tamanho_indice_bytes,
                                  st.tamanho_vetores_bytes + st.tamanho_metadados_bytes)
                 self.assertGreater(st.bytes_lidos, 0)
-        # read lê cada arquivo uma vez; mmap copia as fatias, sobreposição inclusa.
-        self.assertEqual(self.stats["read"].bytes_lidos, self.stats["read"].tamanho_corpus_bytes)
-        self.assertGreater(self.stats["mmap"].bytes_lidos, self.stats["mmap"].tamanho_corpus_bytes)
+        # Mesmas fatias nos dois modos; a sobreposição é relida.
+        self.assertEqual(self.stats["read"].bytes_lidos, self.stats["mmap"].bytes_lidos)
+        self.assertGreater(self.stats["read"].bytes_lidos, self.stats["read"].tamanho_corpus_bytes)
 
     def test_vetores_identicos_entre_modos(self) -> None:
         a = np.load(self.tmp / "store_read" / VECTORS_FILE)
@@ -109,15 +114,15 @@ class SmokeTest(unittest.TestCase):
             cols = [r[1] for r in conn.execute("PRAGMA table_info(chunks)")]
         finally:
             conn.close()
-        self.assertEqual(cols, ["chunk_id", "doc_path", "offset", "length", "n_bytes"])
+        self.assertEqual(cols, ["chunk_id", "doc_path", "offset", "length"])
 
     def test_contexto_relido_do_corpus(self) -> None:
         for mode, res in self.results.items():
             for c in res.chunks:
                 with self.subTest(mode=mode, chunk_id=c.chunk_id):
                     raw = (self.corpus / c.doc).read_bytes()[c.offset:c.offset + c.length]
-                    self.assertTrue(raw.decode().startswith(c.text))
-                    self.assertEqual(c.truncado, len(c.text) < c.length)
+                    self.assertTrue(raw.decode("ascii").startswith(c.text))
+                    self.assertEqual(c.truncado, len(c.text.encode()) < c.length)
         self.assertEqual(self.results["read"].contexto, self.results["mmap"].contexto)
         self.assertEqual(self.results["read"].read_mode, "read")
         self.assertEqual(self.results["mmap"].read_mode, "mmap")
@@ -130,9 +135,9 @@ class SmokeTest(unittest.TestCase):
             store.close()
         self.assertEqual(res.read_mode, "mmap")
         self.assertEqual(res.contexto, self.results["read"].contexto)
-        # mmap copia só os bytes do contexto; read lê os documentos inteiros.
-        self.assertEqual(res.bytes_lidos, res.bytes_contexto)
-        self.assertGreater(self.results["read"].bytes_lidos, res.bytes_lidos)
+        # Os dois modos copiam só as fatias que entram no contexto.
+        for r in (res, *self.results.values()):
+            self.assertEqual(r.bytes_lidos, r.bytes_contexto)
 
     def test_store_exige_corpus(self) -> None:
         corpus = self.tmp / "corpus_tmp"
