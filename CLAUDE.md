@@ -56,6 +56,20 @@ experimento mensurável.
 - **`read_mode` decidido em um ponto só**, dentro de `reader.py`.
 - Tempos vêm de `time.perf_counter`; memória e faltas de página vêm de
   `/proc/self/status` e `resource.getrusage`. Nada de cronometragem manual.
+- **VmRSS sozinho não separa os modos de leitura.** O chunking toca todas as
+  páginas do arquivo, e no mmap elas entram no RSS como páginas de arquivo
+  até o munmap: o pico de VmRSS sai praticamente igual nos dois modos
+  (medido: 154 MB vs 154 MB com docs de 100 MB). A comparação válida é
+  `RssAnon` contra `RssFile` (de `/proc/self/status`) mais a contagem de
+  faltas de página (`ru_minflt`, `ru_majflt` de `resource.getrusage`): no
+  mmap a leitura a frio gera faltas maiores; no read() a E/S acontece dentro
+  da syscall e não conta como falta. Não usar madvise para "baixar" o RSS
+  do mmap.
+- **O store não guarda o texto dos chunks.** O SQLite tem só posições
+  (`chunk_id, doc_path, offset, length, n_bytes`); `retrieve` relê o corpus
+  nos offsets via `open_source`, no `read_mode` da ingestão. Assim read vs
+  mmap também é exercitado na consulta e o page cache importa em tempo de
+  query. Consequência: **o store depende do corpus presente** e inalterado.
 
 ## Estrutura alvo
 
@@ -113,23 +127,29 @@ def ingest(corpus_dir: Path, store: Store, *, chunk_size: int, overlap: int,
            read_mode: str, batch_size: int = 256) -> IngestStats
 #   dim vem de store.dim; batch_size = chunks por lote de embedding/persistência
 
-# store.py — <dir>/meta.sqlite (metadados + texto) e <dir>/vectors.npy (N x D)
+# store.py — <dir>/meta.sqlite (posições, sem texto) e <dir>/vectors.npy (N x D)
 Store.create(root, *, dim=512) -> Store       # escrita; apaga índice anterior
 Store.open(root, *, vectors_mmap=False) -> Store  # leitura; seguro entre threads
+#   falha se o corpus (meta.corpus_dir, relativo ao store) não existir
+#   SQLite chunks: chunk_id, doc_path, offset, length (caracteres), n_bytes
 
 # retrieve.py
-def retrieve(store: Store, query: str, k: int,
-             max_context_bytes: int) -> RetrieveResult
+def retrieve(store: Store, query: str, k: int, max_context_bytes: int, *,
+             read_mode: str | None = None) -> RetrieveResult
+#   read_mode=None usa o modo da ingestão; relê só os bytes que entram no
+#   contexto, abrindo cada documento uma vez
 ```
 
 - `Chunk(doc, seq, offset, length, text)`
 - `IngestStats`: n_documentos, n_chunks, bytes_lidos, tamanho_corpus_bytes,
-  tamanho_indice_bytes, tempo_total_s, tempo_leitura_s, tempo_embedding_s,
+  tamanho_indice_bytes (= tamanho_vetores_bytes + tamanho_metadados_bytes),
+  tempo_total_s, tempo_leitura_s, tempo_embedding_s,
   tempo_persistencia_s, + parâmetros (read_mode, chunk_size, overlap, dim,
   batch_size)
 - `RetrieveResult`: chunks (`RetrievedChunk`), n_trechos, bytes_contexto,
-  tempo_s, contexto, tempo_embedding_s, tempo_busca_s, tempo_montagem_s,
-  k, max_context_bytes. Na linha JSON da CLI, `contexto` e o texto dos
+  tempo_s, contexto, tempo_embedding_s, tempo_busca_s, tempo_leitura_s,
+  tempo_montagem_s, bytes_lidos, read_mode, k, max_context_bytes.
+  `bytes_lidos` no modo read = documentos inteiros de cada trecho. Na linha JSON da CLI, `contexto` e o texto dos
   trechos são omitidos
 - `iter_chunks` é um gerador que, ao terminar, retorna os bytes lidos da
   fonte em `StopIteration.value` (é assim que `ingest` preenche
