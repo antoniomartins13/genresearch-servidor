@@ -128,7 +128,12 @@ def retrieve(store: Store, query: str, k: int,
   tempo_persistencia_s, + parâmetros (read_mode, chunk_size, overlap, dim,
   batch_size)
 - `RetrieveResult`: chunks (`RetrievedChunk`), n_trechos, bytes_contexto,
-  tempo_s, contexto, tempo_embedding_s, tempo_busca_s, tempo_montagem_s
+  tempo_s, contexto, tempo_embedding_s, tempo_busca_s, tempo_montagem_s,
+  k, max_context_bytes. Na linha JSON da CLI, `contexto` e o texto dos
+  trechos são omitidos
+- `iter_chunks` é um gerador que, ao terminar, retorna os bytes lidos da
+  fonte em `StopIteration.value` (é assim que `ingest` preenche
+  `bytes_lidos`)
 - `chunk_id` = linha em `vectors.npy`; determinístico (documentos em ordem de
   nome, chunks em ordem de offset), independe do modo de leitura
 - Contexto: trechos em ordem de score; o que estoura `max_context_bytes` é
