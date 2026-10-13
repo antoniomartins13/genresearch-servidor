@@ -66,19 +66,41 @@ experimento mensurável.
   frio gera faltas maiores; no read() a E/S acontece dentro da syscall e
   não conta como falta. Não usar madvise para "baixar" o RSS do mmap.
 - **O ganho do mmap NÃO está em vazão bruta.** Medição preliminar do núcleo
-  (2026-10-13, uma máquina, NVMe; não substitui C1/C2):
+  (2026-10-13, uma máquina, NVMe; não substitui C1/C2), reproduzível com
+  as ferramentas em `tools/` (ver "Como reproduzir" abaixo):
   - ingestão, 200 MiB: leitura 0,21 s (mmap) vs 0,32 s (read), ou seja,
     menos custo de cópia/syscall, mas irrelevante no total (~10,5 s nos
     dois; o embedding domina);
-  - memória na ingestão, doc de 100 MB: read fica plano (RssAnon 13 MB,
-    RssFile 20 MB); mmap acumula as páginas tocadas como RssFile (20 → 112
-    MB) até o munmap. RssAnon igual nos dois. As páginas do mmap são page
-    cache compartilhado e recuperável, mas o RSS do processo é maior;
-  - consulta (50 consultas, 8 KB de contexto, mediana do tempo de
-    leitura): quente 0,16 ms (read) vs 0,23 ms (mmap); frio 0,7–1,9 ms vs
-    1,5–3,3 ms. O mmap perde: paga mmap/munmap + faltas por consulta para
-    tocar 2 páginas. Faltas por consulta a frio: read 0 maiores; mmap ~4
-    maiores, que é o eixo que separa os modos.
+  - memória na ingestão, doc de 100 MB, no último chunk: read fica plano
+    (RssAnon 14 MB, RssFile 20 MB); mmap acumula as páginas tocadas como
+    RssFile (20 → 120 MB) até o munmap. RssAnon igual nos dois;
+  - consulta (50 consultas, 8 KB de contexto, mediana do tempo de leitura,
+    duas baterias de 3 repetições): quente 0,16–0,35 ms (read) vs
+    0,22–0,27 ms (mmap); frio 0,69–1,94 ms vs 1,52–3,68 ms. Faltas maiores
+    por consulta a frio: read 0, mmap ~4, que é o eixo que separa os modos.
+    **Condição/limitação:** vale para mmap/munmap a cada consulta, que é o
+    que `retrieve` faz. Um mapeamento persistente reutilizado entre
+    consultas eliminaria o custo de setup e provavelmente inverteria o
+    resultado no cache quente. Não implementado.
+- **Conclusão sobre read vs mmap:**
+  - o ganho do mmap é eliminar a cópia kernel→usuário em leitura
+    sequencial em massa (0,21 s contra 0,32 s na leitura da ingestão, ~35%);
+  - os custos são setup por mapeamento e footprint residente maior; em
+    leitura aleatória pequena esses custos dominam e o mmap perde;
+  - a distinção anônimo contra arquivo não some, muda de sentido: os
+    ~100 MB a mais do mmap são page cache recuperável sem swap, enquanto o
+    buffer anônimo do read já é pequeno. Perfis diferentes, nenhum
+    claramente melhor;
+  - o ganho de E/S é engolido pelo embedding (0,11 s em 10,5 s totais).
+- **Como reproduzir as medições acima:**
+  ```bash
+  venv/bin/python -m genresearch gen-corpus --out data/corpus --docs 100 --size-mb 200 --seed 42
+  venv/bin/python -m genresearch gen-corpus --out data/corpus_2docs --docs 2 --size-mb 200 --seed 42
+  venv/bin/python -m genresearch ingest --corpus data/corpus --store data/store_read --read-mode read
+  venv/bin/python -m genresearch ingest --corpus data/corpus --store data/store_mmap --read-mode mmap
+  venv/bin/python -m tools.probe_rss --doc data/corpus_2docs/doc_00000.txt --read-mode mmap --cache frio
+  venv/bin/python -m tools.bench_query --store data/store_read
+  ```
 - **O store não guarda o texto dos chunks.** O SQLite tem só posições
   (`chunk_id, doc_path, offset, length, n_bytes`); `retrieve` relê o corpus
   nos offsets via `open_source`, no `read_mode` da ingestão. Assim read vs
@@ -111,6 +133,7 @@ scripts/
   run-experimentos.sh executa C1 a C6
   graficos.py
 tests/
+tools/          medições do núcleo citadas neste arquivo (evict, probe_rss, bench_query)
 docs/
   enunciado.pdf
   relatorio.pdf
