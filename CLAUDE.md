@@ -56,15 +56,29 @@ experimento mensurável.
 - **`read_mode` decidido em um ponto só**, dentro de `reader.py`.
 - Tempos vêm de `time.perf_counter`; memória e faltas de página vêm de
   `/proc/self/status` e `resource.getrusage`. Nada de cronometragem manual.
-- **VmRSS sozinho não separa os modos de leitura.** O chunking toca todas as
-  páginas do arquivo, e no mmap elas entram no RSS como páginas de arquivo
-  até o munmap: o pico de VmRSS sai praticamente igual nos dois modos
-  (medido: 154 MB vs 154 MB com docs de 100 MB). A comparação válida é
-  `RssAnon` contra `RssFile` (de `/proc/self/status`) mais a contagem de
-  faltas de página (`ru_minflt`, `ru_majflt` de `resource.getrusage`): no
-  mmap a leitura a frio gera faltas maiores; no read() a E/S acontece dentro
-  da syscall e não conta como falta. Não usar madvise para "baixar" o RSS
-  do mmap.
+- **Modo read = leitura convencional por fatia**: `seek(offset)` +
+  `read(n)`, nunca o arquivo inteiro num read() único. A ingestão percorre
+  o arquivo fatia a fatia. Os dois modos copiam exatamente os mesmos bytes
+  (`bytes_lidos` igual), então C1 vs C2 compara mecanismo, não volume de E/S.
+- **VmRSS sozinho não descreve os modos de leitura.** A comparação válida é
+  `RssAnon` contra `RssFile` (de `/proc/self/status`) mais faltas de página
+  (`ru_minflt`, `ru_majflt` de `resource.getrusage`): no mmap a leitura a
+  frio gera faltas maiores; no read() a E/S acontece dentro da syscall e
+  não conta como falta. Não usar madvise para "baixar" o RSS do mmap.
+- **O ganho do mmap NÃO está em vazão bruta.** Medição preliminar do núcleo
+  (2026-10-13, uma máquina, NVMe; não substitui C1/C2):
+  - ingestão, 200 MiB: leitura 0,21 s (mmap) vs 0,32 s (read), ou seja,
+    menos custo de cópia/syscall, mas irrelevante no total (~10,5 s nos
+    dois; o embedding domina);
+  - memória na ingestão, doc de 100 MB: read fica plano (RssAnon 13 MB,
+    RssFile 20 MB); mmap acumula as páginas tocadas como RssFile (20 → 112
+    MB) até o munmap. RssAnon igual nos dois. As páginas do mmap são page
+    cache compartilhado e recuperável, mas o RSS do processo é maior;
+  - consulta (50 consultas, 8 KB de contexto, mediana do tempo de
+    leitura): quente 0,16 ms (read) vs 0,23 ms (mmap); frio 0,7–1,9 ms vs
+    1,5–3,3 ms. O mmap perde: paga mmap/munmap + faltas por consulta para
+    tocar 2 páginas. Faltas por consulta a frio: read 0 maiores; mmap ~4
+    maiores, que é o eixo que separa os modos.
 - **O store não guarda o texto dos chunks.** O SQLite tem só posições
   (`chunk_id, doc_path, offset, length, n_bytes`); `retrieve` relê o corpus
   nos offsets via `open_source`, no `read_mode` da ingestão. Assim read vs
@@ -115,7 +129,7 @@ default, para não quebrar chamadas existentes.
 # reader.py — único ponto onde read_mode é decidido
 def open_source(path: Path, mode: ReadMode) -> ContextManager[ByteSource]
 #   ByteSource: .size, .bytes_lidos, .slice(offset, n) -> bytes
-#   "read": f.read() do arquivo inteiro; "mmap": fatia mm[a:b] sob demanda,
+#   "read": seek(offset) + read(n) por fatia; "mmap": fatia mm[a:b] sob demanda,
 #   nunca materializa o arquivo. (Não existe read_file: foi removido do
 #   contrato porque no modo mmap ele materializaria o arquivo inteiro.)
 
@@ -131,7 +145,8 @@ def ingest(corpus_dir: Path, store: Store, *, chunk_size: int, overlap: int,
 Store.create(root, *, dim=512) -> Store       # escrita; apaga índice anterior
 Store.open(root, *, vectors_mmap=False) -> Store  # leitura; seguro entre threads
 #   falha se o corpus (meta.corpus_dir, relativo ao store) não existir
-#   SQLite chunks: chunk_id, doc_path, offset, length (caracteres), n_bytes
+#   SQLite chunks: chunk_id, doc_path, offset, length — tudo em bytes
+#   (corpus.py garante ASCII: fatia por byte nunca corta sequência UTF-8)
 
 # retrieve.py
 def retrieve(store: Store, query: str, k: int, max_context_bytes: int, *,
@@ -149,7 +164,8 @@ def retrieve(store: Store, query: str, k: int, max_context_bytes: int, *,
 - `RetrieveResult`: chunks (`RetrievedChunk`), n_trechos, bytes_contexto,
   tempo_s, contexto, tempo_embedding_s, tempo_busca_s, tempo_leitura_s,
   tempo_montagem_s, bytes_lidos, read_mode, k, max_context_bytes.
-  `bytes_lidos` no modo read = documentos inteiros de cada trecho. Na linha JSON da CLI, `contexto` e o texto dos
+  `bytes_lidos` = bytes das fatias lidas = `bytes_contexto` nos dois modos.
+  Na linha JSON da CLI, `contexto` e o texto dos
   trechos são omitidos
 - `iter_chunks` é um gerador que, ao terminar, retorna os bytes lidos da
   fonte em `StopIteration.value` (é assim que `ingest` preenche
