@@ -1,0 +1,14 @@
+# dados gerados: corpus, índices, vetores (nunca versionar)
+data/
+*.npy
+*.sqlite
+*.sqlite-journal
+
+# ambiente
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# segredos
+.env
