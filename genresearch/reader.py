@@ -3,15 +3,17 @@
 Este é o ÚNICO módulo que decide o que `read_mode` significa. O resto do
 código só enxerga um `ByteSource` com `slice(offset, n)`.
 
-- "read": um f.read() do arquivo inteiro para um buffer do processo; as
-  fatias são cópias desse buffer. O RSS cresce com o tamanho do documento.
+- "read": leitura convencional; cada fatia é um seek(offset) + read(n). O
+  arquivo inteiro nunca é lido de uma vez: quem consome o arquivo todo (a
+  ingestão) o percorre fatia a fatia.
 - "mmap": o arquivo é mapeado e cada fatia copia só `mm[offset:offset+n]`.
   Apenas as páginas tocadas são carregadas. O arquivo inteiro NUNCA é
   materializado (nada de `mm[:]`).
 
-`bytes_lidos` conta os bytes copiados da fonte para o processo: no modo
-read, o retorno de read(); no modo mmap, a soma das fatias (inclui as
-sobreposições entre chunks).
+Os dois modos entregam exatamente os mesmos bytes nas mesmas fatias, então
+`bytes_lidos` (soma das fatias, sobreposições incluídas) é igual entre eles:
+a diferença medida é o mecanismo (syscall + cópia vs falta de página +
+cópia), não o volume.
 """
 
 from __future__ import annotations
@@ -38,12 +40,23 @@ class ByteSource(Protocol):
 
 class _ReadSource:
     def __init__(self, f) -> None:
-        self._data = f.read()
-        self.size = len(self._data)
-        self.bytes_lidos = self.size
+        self._f = f
+        self.size = os.fstat(f.fileno()).st_size
+        self.bytes_lidos = 0
 
     def slice(self, offset: int, n: int) -> bytes:
-        return self._data[offset:offset + n]
+        n = max(0, min(n, self.size - offset))
+        self._f.seek(offset)
+        parts: list[bytes] = []
+        while n > 0:
+            b = self._f.read(n)  # FileIO sem buffer: read pode voltar curto
+            if not b:
+                break
+            parts.append(b)
+            n -= len(b)
+        data = parts[0] if len(parts) == 1 else b"".join(parts)
+        self.bytes_lidos += len(data)
+        return data
 
 
 class _MmapSource:
