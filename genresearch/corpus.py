@@ -70,6 +70,11 @@ class _Vocab:
         self.lens = np.array([len(t) for t in tokens], dtype=np.int64)
         self.starts = np.concatenate(([0], np.cumsum(self.lens)[:-1]))
         self.flat = np.frombuffer(b"".join(tokens), dtype=np.uint8)
+        # Todo byte do corpus sai deste buffer. Corpus ASCII garante que uma
+        # fatia por offset de byte (ingest e retrieve) nunca corta uma
+        # sequência UTF-8. Verificação explícita: sobrevive a python -O.
+        if int(self.flat.max()) >= 0x80:
+            raise AssertionError("vocabulário com byte não ASCII")
 
         # Distribuição global Zipf; tópicos usam faixas da cauda do vocabulário.
         w = 1.0 / np.arange(1, VOCAB_SIZE + 1, dtype=np.float64) ** ZIPF_S
