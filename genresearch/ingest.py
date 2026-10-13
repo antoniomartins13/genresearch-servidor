@@ -133,7 +133,7 @@ def ingest(corpus_dir: Path, store: Store, *, chunk_size: int, overlap: int,
 
     chunk_id = posição global do chunk = linha em vectors.npy. A dimensão
     dos vetores vem de `store.dim`. O texto não é persistido: o store guarda
-    só (doc_path, offset, length em caracteres, n_bytes) e o caminho do
+    só (doc_path, offset, length), em bytes, e o caminho do
     corpus, que precisa continuar presente para a recuperação.
     """
     _check_window(chunk_size, overlap)
@@ -165,7 +165,7 @@ def ingest(corpus_dir: Path, store: Store, *, chunk_size: int, overlap: int,
         vecs = embed([c.text for c in batch], dim=store.dim)
         t1 = time.perf_counter()
         writer.write(vecs)
-        store.add_chunks([(next_id + i, c.doc, c.offset, len(c.text), c.length)
+        store.add_chunks([(next_id + i, c.doc, c.offset, c.length)
                           for i, c in enumerate(batch)])
         t2 = time.perf_counter()
         t_embed += t1 - t0

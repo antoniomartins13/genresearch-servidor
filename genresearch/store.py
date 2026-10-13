@@ -45,8 +45,7 @@ CREATE TABLE chunks (
     chunk_id INTEGER PRIMARY KEY,
     doc_path TEXT NOT NULL REFERENCES docs(doc_path),
     offset   INTEGER NOT NULL,
-    length   INTEGER NOT NULL,
-    n_bytes  INTEGER NOT NULL
+    length   INTEGER NOT NULL
 );
 CREATE TABLE meta (
     key   TEXT PRIMARY KEY,
@@ -59,16 +58,14 @@ CREATE TABLE meta (
 class ChunkRecord:
     """Posição de um chunk no corpus, como lida do SQLite.
 
-    `length` é o número de caracteres do texto decodificado; `n_bytes`, o
-    tamanho da janela em bytes no arquivo. `doc_size_bytes` é o tamanho do
-    documento na ingestão, para detectar corpus alterado.
+    `offset` e `length` em bytes. `doc_size_bytes` é o tamanho do documento
+    na ingestão, para detectar corpus alterado.
     """
 
     chunk_id: int
     doc_path: str
     offset: int
     length: int
-    n_bytes: int
     doc_size_bytes: int
 
 
@@ -182,9 +179,9 @@ class Store:
         """Registra um documento do corpus e seu tamanho na ingestão."""
         self._wconn().execute("INSERT INTO docs VALUES (?, ?)", (doc_path, size_bytes))
 
-    def add_chunks(self, rows: Sequence[tuple[int, str, int, int, int]]) -> None:
-        """Insere chunks como (chunk_id, doc_path, offset, length, n_bytes)."""
-        self._wconn().executemany("INSERT INTO chunks VALUES (?, ?, ?, ?, ?)", rows)
+    def add_chunks(self, rows: Sequence[tuple[int, str, int, int]]) -> None:
+        """Insere chunks como (chunk_id, doc_path, offset, length) em bytes."""
+        self._wconn().executemany("INSERT INTO chunks VALUES (?, ?, ?, ?)", rows)
 
     def set_corpus_dir(self, corpus_dir: Path) -> None:
         """Grava o caminho do corpus relativo ao diretório do store."""
@@ -239,7 +236,7 @@ class Store:
         ids = [int(i) for i in ids]
         marks = ",".join("?" * len(ids))
         rows = self._rconn().execute(
-            "SELECT c.chunk_id, c.doc_path, c.offset, c.length, c.n_bytes, d.size_bytes "
+            "SELECT c.chunk_id, c.doc_path, c.offset, c.length, d.size_bytes "
             f"FROM chunks c JOIN docs d USING (doc_path) WHERE c.chunk_id IN ({marks})",
             ids).fetchall()
         by_id = {r[0]: ChunkRecord(*r) for r in rows}

@@ -43,8 +43,8 @@ class RetrieveResult:
     """Resultado e medições de uma consulta (tempos via perf_counter).
 
     `bytes_contexto` são os bytes do corpus que entraram no contexto;
-    `bytes_lidos` são os bytes copiados da fonte pelo reader (no modo read,
-    o documento inteiro de cada trecho).
+    `bytes_lidos` são os bytes copiados da fonte pelo reader; como os dois
+    modos leem só as fatias do contexto, é igual a `bytes_contexto`.
     """
 
     chunks: list[RetrievedChunk] = field(default_factory=list)
@@ -80,10 +80,10 @@ def _plan(recs: list[ChunkRecord], budget: int) -> list[tuple[ChunkRecord, int]]
     for rec in recs:
         if budget <= 0:
             break
-        take = min(rec.n_bytes, budget)
+        take = min(rec.length, budget)
         plan.append((rec, take))
         budget -= take
-        if take < rec.n_bytes:
+        if take < rec.length:
             break
     return plan
 
@@ -134,7 +134,7 @@ def retrieve(store: Store, query: str, k: int, max_context_bytes: int, *,
 
     chunks: list[RetrievedChunk] = []
     for rec, take in plan:
-        truncado = take < rec.n_bytes
+        truncado = take < rec.length
         # Trecho inteiro: mesma decodificação da ingestão. Truncado: descarta
         # um eventual caractere multibyte cortado no limite.
         text = raw[rec.chunk_id].decode("utf-8", errors="ignore" if truncado else "replace")
