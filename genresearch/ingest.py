@@ -48,6 +48,8 @@ class IngestStats:
     bytes_lidos: int
     tamanho_corpus_bytes: int
     tamanho_indice_bytes: int
+    tamanho_vetores_bytes: int
+    tamanho_metadados_bytes: int
     tempo_total_s: float
     tempo_leitura_s: float
     tempo_embedding_s: float
@@ -130,7 +132,9 @@ def ingest(corpus_dir: Path, store: Store, *, chunk_size: int, overlap: int,
     """Ingere todos os *.txt de `corpus_dir` (em ordem de nome) em `store`.
 
     chunk_id = posição global do chunk = linha em vectors.npy. A dimensão
-    dos vetores vem de `store.dim`.
+    dos vetores vem de `store.dim`. O texto não é persistido: o store guarda
+    só (doc_path, offset, length em caracteres, n_bytes) e o caminho do
+    corpus, que precisa continuar presente para a recuperação.
     """
     _check_window(chunk_size, overlap)
     if batch_size <= 0:
@@ -147,7 +151,7 @@ def ingest(corpus_dir: Path, store: Store, *, chunk_size: int, overlap: int,
     t_read = t_embed = t_persist = 0.0
     bytes_lidos = 0
     next_id = 0
-    batch: list[tuple[int, Chunk]] = []
+    batch: list[Chunk] = []
 
     t = time.perf_counter()
     writer = store.vector_writer(n_total)
@@ -158,11 +162,11 @@ def ingest(corpus_dir: Path, store: Store, *, chunk_size: int, overlap: int,
         if not batch:
             return
         t0 = time.perf_counter()
-        vecs = embed([c.text for _, c in batch], dim=store.dim)
+        vecs = embed([c.text for c in batch], dim=store.dim)
         t1 = time.perf_counter()
         writer.write(vecs)
-        store.add_chunks([(next_id + i, doc_id, c.seq, c.offset, c.length, c.text)
-                          for i, (doc_id, c) in enumerate(batch)])
+        store.add_chunks([(next_id + i, c.doc, c.offset, len(c.text), c.length)
+                          for i, c in enumerate(batch)])
         t2 = time.perf_counter()
         t_embed += t1 - t0
         t_persist += t2 - t1
@@ -171,7 +175,7 @@ def ingest(corpus_dir: Path, store: Store, *, chunk_size: int, overlap: int,
 
     for path, size, n_exp in zip(paths, sizes, expected):
         t = time.perf_counter()
-        doc_id = store.add_document(path.name, size)
+        store.add_document(path.name, size)
         t_persist += time.perf_counter() - t
 
         it = iter_chunks(path, chunk_size=chunk_size, overlap=overlap, read_mode=read_mode)
@@ -185,7 +189,7 @@ def ingest(corpus_dir: Path, store: Store, *, chunk_size: int, overlap: int,
                 bytes_lidos += stop.value
                 break
             t_read += time.perf_counter() - t
-            batch.append((doc_id, chunk))
+            batch.append(chunk)
             n_doc += 1
             if len(batch) >= batch_size:
                 flush()
@@ -196,6 +200,7 @@ def ingest(corpus_dir: Path, store: Store, *, chunk_size: int, overlap: int,
 
     t = time.perf_counter()
     writer.finish()
+    store.set_corpus_dir(corpus_dir)
     for key, value in (("chunk_size", chunk_size), ("overlap", overlap),
                        ("read_mode", read_mode), ("n_chunks", n_total),
                        ("n_documentos", len(paths))):
@@ -203,12 +208,15 @@ def ingest(corpus_dir: Path, store: Store, *, chunk_size: int, overlap: int,
     store.commit()
     t_persist += time.perf_counter() - t
 
+    sizes_idx = store.sizes()
     return IngestStats(
         n_documentos=len(paths),
         n_chunks=n_total,
         bytes_lidos=bytes_lidos,
         tamanho_corpus_bytes=sum(sizes),
-        tamanho_indice_bytes=store.size_bytes(),
+        tamanho_indice_bytes=sizes_idx.total_bytes,
+        tamanho_vetores_bytes=sizes_idx.vetores_bytes,
+        tamanho_metadados_bytes=sizes_idx.metadados_bytes,
         tempo_total_s=time.perf_counter() - t_start,
         tempo_leitura_s=t_read,
         tempo_embedding_s=t_embed,

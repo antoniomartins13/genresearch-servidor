@@ -54,7 +54,8 @@ def main(argv: list[str] | None = None) -> int:
         from .store import Store
         store = Store.open(cfg.store, vectors_mmap=cfg.vectors_mmap)
         try:
-            result = retrieve(store, cfg.q, cfg.k, cfg.max_context_bytes)
+            result = retrieve(store, cfg.q, cfg.k, cfg.max_context_bytes,
+                              read_mode=cfg.read_mode)
         finally:
             store.close()
         # O texto do contexto não vai para a linha JSON (ela é para CSV).

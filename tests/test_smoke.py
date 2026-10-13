@@ -7,6 +7,8 @@ from __future__ import annotations
 
 import hashlib
 import json
+import shutil
+import sqlite3
 import subprocess
 import sys
 import tempfile
@@ -18,7 +20,7 @@ import numpy as np
 from genresearch.corpus import generate_corpus
 from genresearch.ingest import count_chunks, ingest
 from genresearch.retrieve import retrieve
-from genresearch.store import VECTORS_FILE, Store
+from genresearch.store import META_FILE, VECTORS_FILE, Store
 
 ROOT = Path(__file__).resolve().parent.parent
 PARAMS = dict(chunk_size=2048, overlap=128)
@@ -75,7 +77,10 @@ class SmokeTest(unittest.TestCase):
                 self.assertEqual(st.n_documentos, 6)
                 self.assertEqual(st.n_chunks, expected)
                 self.assertEqual(st.tamanho_corpus_bytes, round(1.5 * (1 << 20)))
-                self.assertGreater(st.tamanho_indice_bytes, 0)
+                self.assertEqual(st.tamanho_vetores_bytes, 128 + st.n_chunks * 512 * 4)
+                self.assertGreater(st.tamanho_metadados_bytes, 0)
+                self.assertEqual(st.tamanho_indice_bytes,
+                                 st.tamanho_vetores_bytes + st.tamanho_metadados_bytes)
                 self.assertGreater(st.bytes_lidos, 0)
         # read lê cada arquivo uma vez; mmap copia as fatias, sobreposição inclusa.
         self.assertEqual(self.stats["read"].bytes_lidos, self.stats["read"].tamanho_corpus_bytes)
@@ -97,6 +102,50 @@ class SmokeTest(unittest.TestCase):
         self.assertEqual(r.bytes_contexto, len(r.contexto.encode()))
         self.assertEqual(r.chunks[0].doc, "doc_00003.txt")
         self.assertEqual({c.chunk_id for c in r.chunks}, {c.chunk_id for c in m.chunks})
+
+    def test_sqlite_sem_texto(self) -> None:
+        conn = sqlite3.connect(self.tmp / "store_read" / META_FILE)
+        try:
+            cols = [r[1] for r in conn.execute("PRAGMA table_info(chunks)")]
+        finally:
+            conn.close()
+        self.assertEqual(cols, ["chunk_id", "doc_path", "offset", "length", "n_bytes"])
+
+    def test_contexto_relido_do_corpus(self) -> None:
+        for mode, res in self.results.items():
+            for c in res.chunks:
+                with self.subTest(mode=mode, chunk_id=c.chunk_id):
+                    raw = (self.corpus / c.doc).read_bytes()[c.offset:c.offset + c.length]
+                    self.assertTrue(raw.decode().startswith(c.text))
+                    self.assertEqual(c.truncado, len(c.text) < c.length)
+        self.assertEqual(self.results["read"].contexto, self.results["mmap"].contexto)
+        self.assertEqual(self.results["read"].read_mode, "read")
+        self.assertEqual(self.results["mmap"].read_mode, "mmap")
+
+    def test_consulta_com_read_mode_trocado(self) -> None:
+        store = Store.open(self.tmp / "store_read")
+        try:
+            res = retrieve(store, self.query, QUERY_K, QUERY_BUDGET, read_mode="mmap")
+        finally:
+            store.close()
+        self.assertEqual(res.read_mode, "mmap")
+        self.assertEqual(res.contexto, self.results["read"].contexto)
+        # mmap copia só os bytes do contexto; read lê os documentos inteiros.
+        self.assertEqual(res.bytes_lidos, res.bytes_contexto)
+        self.assertGreater(self.results["read"].bytes_lidos, res.bytes_lidos)
+
+    def test_store_exige_corpus(self) -> None:
+        corpus = self.tmp / "corpus_tmp"
+        store_dir = self.tmp / "store_sem_corpus"
+        shutil.copytree(self.corpus, corpus)
+        store = Store.create(store_dir, dim=64)
+        try:
+            ingest(corpus, store, read_mode="read", **PARAMS)
+        finally:
+            store.close()
+        shutil.rmtree(corpus)
+        with self.assertRaises(FileNotFoundError):
+            Store.open(store_dir)
 
     def test_vectors_mmap_mesmo_resultado(self) -> None:
         store = Store.open(self.tmp / "store_read", vectors_mmap=True)

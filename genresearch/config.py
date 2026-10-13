@@ -49,6 +49,7 @@ class QueryConfig:
     k: int = 5
     max_context_bytes: int = 8192
     vectors_mmap: bool = False
+    read_mode: ReadMode | None = None
 
 
 Config = Union[GenCorpusConfig, IngestConfig, QueryConfig]
@@ -108,6 +109,8 @@ def build_parser() -> argparse.ArgumentParser:
     q.add_argument("--max-context-bytes", type=_positive_int, default=8192)
     q.add_argument("--vectors-mmap", action="store_true",
                    help="carrega vectors.npy com np.load(mmap_mode='r')")
+    q.add_argument("--read-mode", choices=READ_MODES, default=None,
+                   help="modo de releitura do corpus (padrão: o da ingestão)")
     return parser
 
 
@@ -126,4 +129,4 @@ def parse_args(argv: list[str] | None = None) -> Config:
                             batch_size=a.batch_size)
     return QueryConfig(store=a.store, q=a.q, k=a.k,
                        max_context_bytes=a.max_context_bytes,
-                       vectors_mmap=a.vectors_mmap)
+                       vectors_mmap=a.vectors_mmap, read_mode=a.read_mode)
