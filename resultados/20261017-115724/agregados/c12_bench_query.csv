@@ -1,0 +1,5 @@
+read_mode,cache,n,leitura_mediana_ms_media,leitura_mediana_ms_dp,majflt_consulta_media,majflt_consulta_dp
+read,frio,3,0.9080583333798131,0.0016545089565428172,0.0,0.0
+read,quente,3,0.3777516665953347,0.374347486615287,0.0,0.0
+mmap,frio,3,6.859458833370506,0.021976682794926657,3.32,0.0
+mmap,quente,3,0.2887591667407226,0.004779694237572621,0.0,0.0

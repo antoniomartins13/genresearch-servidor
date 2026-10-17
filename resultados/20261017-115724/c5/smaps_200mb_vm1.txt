@@ -1,0 +1,26 @@
+# trechos de /proc/self/smaps (mapeamentos do índice e do corpus)
+7fbb07800000-7fbb14d7b000 r--s 00000000 08:30 192323                     /home/anderson/SO/genresearch-servidor/data/exp/c5_store_200mb/vectors.npy
+Size:             218604 kB
+Rss:              218604 kB
+Pss:              218604 kB
+Shared_Clean:          0 kB
+Private_Clean:    218604 kB
+Anonymous:             0 kB
+Swap:                  0 kB
+
+# /proc/self/status
+VmPeak:	  817676 kB
+VmSize:	  816824 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  258652 kB
+VmRSS:	  258652 kB
+RssAnon:	   18560 kB
+RssFile:	  240092 kB
+RssShmem:	       0 kB
+VmData:	  535772 kB
+VmStk:	     136 kB
+VmExe:	    2956 kB
+VmLib:	   41164 kB
+VmPTE:	     552 kB
+VmSwap:	       0 kB

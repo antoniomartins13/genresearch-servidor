@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/anderson/SO/genresearch-servidor/genresearch/__main__.py", line 74, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/anderson/SO/genresearch-servidor/genresearch/__main__.py", line 55, in main
+    store = Store.open(cfg.store, vectors_mmap=cfg.vectors_mmap)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anderson/SO/genresearch-servidor/genresearch/store.py", line 151, in open
+    raise FileNotFoundError(f"store não encontrado: {meta_path}")
+FileNotFoundError: store não encontrado: data/exp/falhas/nao_existe/meta.sqlite

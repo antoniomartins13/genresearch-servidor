@@ -85,9 +85,11 @@ TEM_MPL=1
   TEM_MPL=0
   msg "AVISO: matplotlib ausente; os gráficos não serão gerados. Instale com: $PY -m pip install -r requirements-analise.txt"
 }
-if [[ -n "$(git status --porcelain 2> /dev/null)" ]]; then
+# A própria pasta resultados/ (incluindo esta execução) não conta como alteração de código.
+GIT_STATUS=(git status --porcelain -- . ':(exclude)resultados')
+if [[ -n "$("${GIT_STATUS[@]}" 2> /dev/null)" ]]; then
   msg "AVISO: há alterações não commitadas; o commit registrado não reproduz exatamente esta execução"
-  git status --short > "$RUN/git_alteracoes_locais.txt" || true
+  "${GIT_STATUS[@]}" > "$RUN/git_alteracoes_locais.txt" || true
 fi
 TEM_STRACE=0
 if tem strace && strace -o /dev/null true 2> /dev/null; then TEM_STRACE=1; else msg "AVISO: strace indisponível; evidências de syscalls serão puladas (sudo apt install strace)"; fi
@@ -148,7 +150,8 @@ json.dump({
     "inicio": datetime.now().astimezone().isoformat(timespec="seconds"),
     "comando": e["CMD"],
     "commit": sh("git rev-parse HEAD"), "branch": sh("git rev-parse --abbrev-ref HEAD"),
-    "alteracoes_locais": bool(sh("git status --porcelain")),
+    "alteracoes_locais": bool(sh("git status --porcelain -- . ':(exclude)resultados'")),
+    "openblas_num_threads": e.get("OPENBLAS_NUM_THREADS"), "omp_num_threads": e.get("OMP_NUM_THREADS"),
     "rapido": e["RAPIDO"] == "1", "reps": int(e["REPS"]), "req": int(e["REQ"]),
     "workers": e["WORKERS"], "corpus_mb": int(e["CORPUS_MB"]), "docs": int(e["DOCS"]),
     "nq": int(e["NQ"]), "seed_corpus": int(e["SEED"]), "c5_tamanhos_mb": e["C5_TAMANHOS"],

@@ -1,0 +1,18 @@
+# trechos de /proc/self/smaps (mapeamentos do índice e do corpus)
+
+# /proc/self/status
+VmPeak:	  817680 kB
+VmSize:	  816828 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  258932 kB
+VmRSS:	  258632 kB
+RssAnon:	  237160 kB
+RssFile:	   21472 kB
+RssShmem:	       0 kB
+VmData:	  754380 kB
+VmStk:	     136 kB
+VmExe:	    2956 kB
+VmLib:	   41164 kB
+VmPTE:	     696 kB
+VmSwap:	       0 kB

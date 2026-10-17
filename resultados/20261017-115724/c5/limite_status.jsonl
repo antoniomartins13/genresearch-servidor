@@ -1,0 +1,6 @@
+{"rep": 1, "vectors_mmap": 0, "mecanismo": "systemd", "limite_mb": 1220, "tamanho_mb": 2000, "codigo_saida": 0, "duracao_s": 79}
+{"rep": 1, "vectors_mmap": 1, "mecanismo": "systemd", "limite_mb": 1220, "tamanho_mb": 2000, "codigo_saida": 0, "duracao_s": 6}
+{"rep": 2, "vectors_mmap": 0, "mecanismo": "systemd", "limite_mb": 1220, "tamanho_mb": 2000, "codigo_saida": 0, "duracao_s": 49}
+{"rep": 2, "vectors_mmap": 1, "mecanismo": "systemd", "limite_mb": 1220, "tamanho_mb": 2000, "codigo_saida": 0, "duracao_s": 7}
+{"rep": 3, "vectors_mmap": 0, "mecanismo": "systemd", "limite_mb": 1220, "tamanho_mb": 2000, "codigo_saida": 0, "duracao_s": 55}
+{"rep": 3, "vectors_mmap": 1, "mecanismo": "systemd", "limite_mb": 1220, "tamanho_mb": 2000, "codigo_saida": 0, "duracao_s": 8}

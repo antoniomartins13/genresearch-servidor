@@ -1,0 +1,2 @@
+config,n,total_media,total_dp,processadas_media,processadas_dp,rejeitadas_media,rejeitadas_dp,erros_media,erros_dp,vazao_media,vazao_dp,bloqueio_prod_s_media,bloqueio_prod_s_dp,fila_max_media,fila_max_dp
+C6_fila_saturada,3,40.0,0.0,2.0,0.0,38.0,0.0,0.0,0.0,8.671664371461206,0.46211756174905017,0.0578533780003454,0.008784162533318256,1.0,0.0

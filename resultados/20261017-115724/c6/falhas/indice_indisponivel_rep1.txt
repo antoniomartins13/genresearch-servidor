@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/anderson/SO/genresearch-servidor/genresearch/__main__.py", line 74, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/anderson/SO/genresearch-servidor/genresearch/__main__.py", line 55, in main
+    store = Store.open(cfg.store, vectors_mmap=cfg.vectors_mmap)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anderson/SO/genresearch-servidor/genresearch/store.py", line 160, in open
+    vectors = np.load(root / VECTORS_FILE, mmap_mode="r" if vectors_mmap else None)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anderson/SO/genresearch-servidor/venv/lib/python3.12/site-packages/numpy/lib/_npyio_impl.py", line 454, in load
+    fid = stack.enter_context(open(os.fspath(file), "rb"))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data/exp/falhas/store_sem_vetores/vectors.npy'

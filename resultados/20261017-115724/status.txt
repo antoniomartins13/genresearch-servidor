@@ -1,0 +1,9 @@
+AMBIENTE ok 7s
+C12 ok 174s
+C3 ok 72s
+C4 ok 101s
+CONTEXTO ok 18s
+C5 ok 778s
+C6 ok 5s
+D ok 22s
+GRAFICOS ok 3s

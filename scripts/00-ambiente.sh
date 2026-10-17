@@ -28,7 +28,7 @@ secao() {  # secao TÍTULO comando [args...]
 
 secao "Data da coleta" date --iso-8601=seconds
 secao "Commit do repositório" git rev-parse HEAD
-secao "Alterações locais não commitadas" git status --short
+secao "Alterações locais não commitadas (fora de resultados/)" git status --short -- . ':(exclude)resultados'
 secao "Kernel" uname -a
 secao "Distribuição" cat /etc/os-release
 secao "Virtualização" sh -c 'command -v systemd-detect-virt >/dev/null && systemd-detect-virt || echo "systemd-detect-virt ausente"'
@@ -91,7 +91,7 @@ wsl = "microsoft" in open("/proc/version").read().lower()
 dados = {
     "data": datetime.now().astimezone().isoformat(timespec="seconds"),
     "commit": sh("git rev-parse HEAD"),
-    "alteracoes_locais": bool(sh("git status --porcelain")),
+    "alteracoes_locais": bool(sh("git status --porcelain -- . ':(exclude)resultados'")),
     "kernel": platform.release(),
     "distribuicao": os_release.get("PRETTY_NAME"),
     "virtualizacao": sh("systemd-detect-virt 2>/dev/null") or ("wsl" if wsl else None),

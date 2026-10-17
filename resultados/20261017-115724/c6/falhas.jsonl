@@ -1,0 +1,12 @@
+{"caso": "store_inexistente", "rep": 1, "codigo_saida": 1, "mensagem": "FileNotFoundError: store não encontrado: data/exp/falhas/nao_existe/meta.sqlite"}
+{"caso": "corpus_ausente", "rep": 1, "codigo_saida": 1, "mensagem": "FileNotFoundError: corpus do store ausente: data/exp/falhas/store_corpus_apagado/../corpus_apagado (o store não guarda texto)"}
+{"caso": "indice_indisponivel", "rep": 1, "codigo_saida": 1, "mensagem": "FileNotFoundError: [Errno 2] No such file or directory: 'data/exp/falhas/store_sem_vetores/vectors.npy'"}
+{"caso": "corpus_alterado", "rep": 1, "codigo_saida": 1, "mensagem": "RuntimeError: doc_00001.txt: tamanho 524302 difere do ingerido (524288); corpus alterado"}
+{"caso": "store_inexistente", "rep": 2, "codigo_saida": 1, "mensagem": "FileNotFoundError: store não encontrado: data/exp/falhas/nao_existe/meta.sqlite"}
+{"caso": "corpus_ausente", "rep": 2, "codigo_saida": 1, "mensagem": "FileNotFoundError: corpus do store ausente: data/exp/falhas/store_corpus_apagado/../corpus_apagado (o store não guarda texto)"}
+{"caso": "indice_indisponivel", "rep": 2, "codigo_saida": 1, "mensagem": "FileNotFoundError: [Errno 2] No such file or directory: 'data/exp/falhas/store_sem_vetores/vectors.npy'"}
+{"caso": "corpus_alterado", "rep": 2, "codigo_saida": 1, "mensagem": "RuntimeError: doc_00001.txt: tamanho 524302 difere do ingerido (524288); corpus alterado"}
+{"caso": "store_inexistente", "rep": 3, "codigo_saida": 1, "mensagem": "FileNotFoundError: store não encontrado: data/exp/falhas/nao_existe/meta.sqlite"}
+{"caso": "corpus_ausente", "rep": 3, "codigo_saida": 1, "mensagem": "FileNotFoundError: corpus do store ausente: data/exp/falhas/store_corpus_apagado/../corpus_apagado (o store não guarda texto)"}
+{"caso": "indice_indisponivel", "rep": 3, "codigo_saida": 1, "mensagem": "FileNotFoundError: [Errno 2] No such file or directory: 'data/exp/falhas/store_sem_vetores/vectors.npy'"}
+{"caso": "corpus_alterado", "rep": 3, "codigo_saida": 1, "mensagem": "RuntimeError: doc_00001.txt: tamanho 524302 difere do ingerido (524288); corpus alterado"}

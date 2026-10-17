@@ -1,0 +1,801 @@
+{"seq":0,"t":0.001066,"thr":"worker-0","evento":"consulta","campos":{"chave":"36728574","consulta":"condi\u00e7\u00e3o mem\u00f3ria starvation"}}
+{"seq":1,"t":0.001799,"thr":"worker-1","evento":"consulta","campos":{"chave":"39d83a54","consulta":"deadlock com kernel"}}
+{"seq":2,"t":0.035274,"thr":"worker-0","evento":"cache","campos":{"chave":"36728574","estado":"erro","tempo_s":0.033929}}
+{"seq":3,"t":0.035325,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"36728574","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.013752699999940887}}
+{"seq":4,"t":0.035342,"thr":"worker-0","evento":"geracao","campos":{"chave":"36728574","tempo_s":0.02008852500011926}}
+{"seq":5,"t":0.035399,"thr":"worker-0","evento":"consulta","campos":{"chave":"860da463","consulta":"mmap entre p\u00e1gina"}}
+{"seq":6,"t":0.037212,"thr":"worker-1","evento":"cache","campos":{"chave":"39d83a54","estado":"erro","tempo_s":0.035324}}
+{"seq":7,"t":0.037392,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"39d83a54","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.01496846099985305}}
+{"seq":8,"t":0.037432,"thr":"worker-1","evento":"geracao","campos":{"chave":"39d83a54","tempo_s":0.020216621000145096}}
+{"seq":9,"t":0.037616,"thr":"worker-1","evento":"consulta","campos":{"chave":"67ed50e9","consulta":"MemAvailable swap p\u00e1ginas"}}
+{"seq":10,"t":0.068094,"thr":"worker-1","evento":"cache","campos":{"chave":"67ed50e9","estado":"erro","tempo_s":0.030431}}
+{"seq":11,"t":0.068155,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"67ed50e9","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.010244448999856104}}
+{"seq":12,"t":0.068172,"thr":"worker-1","evento":"geracao","campos":{"chave":"67ed50e9","tempo_s":0.020067985999958182}}
+{"seq":13,"t":0.068244,"thr":"worker-1","evento":"consulta","campos":{"chave":"3819a0e7","consulta":"p\u00e1gina produtores cache"}}
+{"seq":14,"t":0.072271,"thr":"worker-0","evento":"cache","campos":{"chave":"860da463","estado":"erro","tempo_s":0.033709}}
+{"seq":15,"t":0.076305,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"860da463","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.013552828999991107}}
+{"seq":16,"t":0.076444,"thr":"worker-0","evento":"geracao","campos":{"chave":"860da463","tempo_s":0.020080512000049566}}
+{"seq":17,"t":0.076624,"thr":"worker-0","evento":"consulta","campos":{"chave":"c37adf7a","consulta":"produtores faltas kernel"}}
+{"seq":18,"t":0.105266,"thr":"worker-1","evento":"cache","campos":{"chave":"3819a0e7","estado":"erro","tempo_s":0.033111}}
+{"seq":19,"t":0.10533,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"3819a0e7","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.012985000000071523}}
+{"seq":20,"t":0.105346,"thr":"worker-1","evento":"geracao","campos":{"chave":"3819a0e7","tempo_s":0.02009353500011457}}
+{"seq":21,"t":0.105401,"thr":"worker-1","evento":"consulta","campos":{"chave":"58fb6442","consulta":"produtores MemAvailable m\u00fatua"}}
+{"seq":22,"t":0.108347,"thr":"worker-0","evento":"cache","campos":{"chave":"c37adf7a","estado":"erro","tempo_s":0.031604}}
+{"seq":23,"t":0.108603,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"c37adf7a","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.00921571200001381}}
+{"seq":24,"t":0.108708,"thr":"worker-0","evento":"geracao","campos":{"chave":"c37adf7a","tempo_s":0.022266195999918637}}
+{"seq":25,"t":0.108954,"thr":"worker-0","evento":"consulta","campos":{"chave":"46aa2974","consulta":"p\u00e1gina de mem\u00f3ria"}}
+{"seq":26,"t":0.138011,"thr":"worker-0","evento":"cache","campos":{"chave":"46aa2974","estado":"erro","tempo_s":0.028736}}
+{"seq":27,"t":0.138066,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"46aa2974","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.008587860000034198}}
+{"seq":28,"t":0.138083,"thr":"worker-0","evento":"geracao","campos":{"chave":"46aa2974","tempo_s":0.02009308499987128}}
+{"seq":29,"t":0.138141,"thr":"worker-0","evento":"consulta","campos":{"chave":"1d106e8b","consulta":"do MemAvailable mmap"}}
+{"seq":30,"t":0.144215,"thr":"worker-1","evento":"cache","campos":{"chave":"58fb6442","estado":"erro","tempo_s":0.038745}}
+{"seq":31,"t":0.144292,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"58fb6442","n_trechos":5,"bytes_contexto":8192,"tempo_s":0.013103635000106806}}
+{"seq":32,"t":0.144308,"thr":"worker-1","evento":"geracao","campos":{"chave":"58fb6442","tempo_s":0.02560585700007323}}
+{"seq":33,"t":0.144361,"thr":"worker-1","evento":"consulta","campos":{"chave":"4713c0d2","consulta":"corrida com kernel"}}
+{"seq":34,"t":0.172886,"thr":"worker-0","evento":"cache","campos":{"chave":"1d106e8b","estado":"erro","tempo_s":0.034686}}
+{"seq":35,"t":0.172938,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"1d106e8b","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.014559731999952419}}
+{"seq":36,"t":0.172968,"thr":"worker-0","evento":"geracao","campos":{"chave":"1d106e8b","tempo_s":0.02009370700011459}}
+{"seq":37,"t":0.173031,"thr":"worker-0","evento":"consulta","campos":{"chave":"d833b957","consulta":"swap entre mutex"}}
+{"seq":38,"t":0.176375,"thr":"worker-1","evento":"cache","campos":{"chave":"4713c0d2","estado":"erro","tempo_s":0.031923}}
+{"seq":39,"t":0.176679,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"4713c0d2","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.008868661999940741}}
+{"seq":40,"t":0.176822,"thr":"worker-1","evento":"geracao","campos":{"chave":"4713c0d2","tempo_s":0.022944676999941294}}
+{"seq":41,"t":0.177108,"thr":"worker-1","evento":"consulta","campos":{"chave":"add9cbd8","consulta":"entre exclus\u00e3o menores"}}
+{"seq":42,"t":0.205673,"thr":"worker-1","evento":"cache","campos":{"chave":"add9cbd8","estado":"erro","tempo_s":0.028381}}
+{"seq":43,"t":0.205738,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"add9cbd8","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.008235067999976309}}
+{"seq":44,"t":0.205754,"thr":"worker-1","evento":"geracao","campos":{"chave":"add9cbd8","tempo_s":0.02008769500002927}}
+{"seq":45,"t":0.205811,"thr":"worker-1","evento":"consulta","campos":{"chave":"e95462b8","consulta":"MemAvailable leitura de"}}
+{"seq":46,"t":0.212244,"thr":"worker-0","evento":"cache","campos":{"chave":"d833b957","estado":"erro","tempo_s":0.039153}}
+{"seq":47,"t":0.212299,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"d833b957","n_trechos":5,"bytes_contexto":8192,"tempo_s":0.013065912000001845}}
+{"seq":48,"t":0.212326,"thr":"worker-0","evento":"geracao","campos":{"chave":"d833b957","tempo_s":0.026057465000121738}}
+{"seq":49,"t":0.212404,"thr":"worker-0","evento":"consulta","campos":{"chave":"435576d4","consulta":"faltas deadlock pagina\u00e7\u00e3o"}}
+{"seq":50,"t":0.238948,"thr":"worker-0","evento":"cache","campos":{"chave":"435576d4","estado":"erro","tempo_s":0.026503}}
+{"seq":51,"t":0.239047,"thr":"worker-1","evento":"cache","campos":{"chave":"e95462b8","estado":"erro","tempo_s":0.033162}}
+{"seq":52,"t":0.239064,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"e95462b8","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.013081241999998383}}
+{"seq":53,"t":0.239077,"thr":"worker-1","evento":"geracao","campos":{"chave":"e95462b8","tempo_s":0.02006317800010038}}
+{"seq":54,"t":0.239129,"thr":"worker-1","evento":"consulta","campos":{"chave":"aa118927","consulta":"kernel maiores de"}}
+{"seq":55,"t":0.244152,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"435576d4","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006380943000067418}}
+{"seq":56,"t":0.244311,"thr":"worker-0","evento":"geracao","campos":{"chave":"435576d4","tempo_s":0.020088536000002932}}
+{"seq":57,"t":0.244461,"thr":"worker-0","evento":"consulta","campos":{"chave":"28226d58","consulta":"virtual com swap"}}
+{"seq":58,"t":0.271079,"thr":"worker-0","evento":"cache","campos":{"chave":"28226d58","estado":"erro","tempo_s":0.026534}}
+{"seq":59,"t":0.271126,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"28226d58","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006406852000054641}}
+{"seq":60,"t":0.271141,"thr":"worker-0","evento":"geracao","campos":{"chave":"28226d58","tempo_s":0.020091832000161958}}
+{"seq":61,"t":0.271195,"thr":"worker-0","evento":"consulta","campos":{"chave":"d4c59e5d","consulta":"de produtores faltas"}}
+{"seq":62,"t":0.27163,"thr":"worker-1","evento":"cache","campos":{"chave":"aa118927","estado":"erro","tempo_s":0.032442}}
+{"seq":63,"t":0.27171,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"aa118927","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.012333902000136732}}
+{"seq":64,"t":0.271894,"thr":"worker-1","evento":"geracao","campos":{"chave":"aa118927","tempo_s":0.020074006999948324}}
+{"seq":65,"t":0.272065,"thr":"worker-1","evento":"consulta","campos":{"chave":"91614a1f","consulta":"maiores MemAvailable virtual"}}
+{"seq":66,"t":0.298448,"thr":"worker-0","evento":"cache","campos":{"chave":"d4c59e5d","estado":"erro","tempo_s":0.027184}}
+{"seq":67,"t":0.2985,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"d4c59e5d","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.007057059000089794}}
+{"seq":68,"t":0.298516,"thr":"worker-0","evento":"geracao","campos":{"chave":"d4c59e5d","tempo_s":0.020091501000024437}}
+{"seq":69,"t":0.298577,"thr":"worker-0","evento":"consulta","campos":{"chave":"b484365a","consulta":"MemAvailable exclus\u00e3o p\u00e1ginas"}}
+{"seq":70,"t":0.305837,"thr":"worker-1","evento":"cache","campos":{"chave":"91614a1f","estado":"erro","tempo_s":0.033565}}
+{"seq":71,"t":0.305887,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"91614a1f","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.013434223999865935}}
+{"seq":72,"t":0.305909,"thr":"worker-1","evento":"geracao","campos":{"chave":"91614a1f","tempo_s":0.02009276399985538}}
+{"seq":73,"t":0.305969,"thr":"worker-1","evento":"consulta","campos":{"chave":"96c3c99e","consulta":"corrida exclus\u00e3o pagina\u00e7\u00e3o"}}
+{"seq":74,"t":0.324865,"thr":"worker-0","evento":"cache","campos":{"chave":"b484365a","estado":"erro","tempo_s":0.026236}}
+{"seq":75,"t":0.324908,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"b484365a","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006124094999904628}}
+{"seq":76,"t":0.324923,"thr":"worker-0","evento":"geracao","campos":{"chave":"b484365a","tempo_s":0.020080912000139506}}
+{"seq":77,"t":0.324975,"thr":"worker-0","evento":"consulta","campos":{"chave":"fe73e572","consulta":"com consumidores mmap"}}
+{"seq":78,"t":0.332309,"thr":"worker-1","evento":"cache","campos":{"chave":"96c3c99e","estado":"erro","tempo_s":0.026287}}
+{"seq":79,"t":0.332348,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"96c3c99e","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006182816000091407}}
+{"seq":80,"t":0.332389,"thr":"worker-1","evento":"geracao","campos":{"chave":"96c3c99e","tempo_s":0.02007818600009159}}
+{"seq":81,"t":0.332442,"thr":"worker-1","evento":"consulta","campos":{"chave":"2b1a2b25","consulta":"produtores faltas virtual"}}
+{"seq":82,"t":0.351613,"thr":"worker-0","evento":"cache","campos":{"chave":"fe73e572","estado":"erro","tempo_s":0.026583}}
+{"seq":83,"t":0.351657,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"fe73e572","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006466274000104022}}
+{"seq":84,"t":0.351672,"thr":"worker-0","evento":"geracao","campos":{"chave":"fe73e572","tempo_s":0.02009012899998197}}
+{"seq":85,"t":0.351729,"thr":"worker-0","evento":"consulta","campos":{"chave":"52229328","consulta":"com pagina\u00e7\u00e3o do"}}
+{"seq":86,"t":0.358903,"thr":"worker-1","evento":"cache","campos":{"chave":"2b1a2b25","estado":"erro","tempo_s":0.026409}}
+{"seq":87,"t":0.358951,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"2b1a2b25","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006285230999992564}}
+{"seq":88,"t":0.358974,"thr":"worker-1","evento":"geracao","campos":{"chave":"2b1a2b25","tempo_s":0.02009373600003528}}
+{"seq":89,"t":0.359028,"thr":"worker-1","evento":"consulta","campos":{"chave":"d84e4578","consulta":"e de mutex"}}
+{"seq":90,"t":0.378084,"thr":"worker-0","evento":"cache","campos":{"chave":"52229328","estado":"erro","tempo_s":0.026301}}
+{"seq":91,"t":0.378132,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"52229328","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006182686000101967}}
+{"seq":92,"t":0.378157,"thr":"worker-0","evento":"geracao","campos":{"chave":"52229328","tempo_s":0.02008926700000302}}
+{"seq":93,"t":0.378213,"thr":"worker-0","evento":"consulta","campos":{"chave":"533e241e","consulta":"leitura thrashing virtual"}}
+{"seq":94,"t":0.38705,"thr":"worker-1","evento":"cache","campos":{"chave":"d84e4578","estado":"erro","tempo_s":0.027967}}
+{"seq":95,"t":0.387097,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"d84e4578","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006149381999875914}}
+{"seq":96,"t":0.387113,"thr":"worker-1","evento":"geracao","campos":{"chave":"d84e4578","tempo_s":0.02179019100003643}}
+{"seq":97,"t":0.387173,"thr":"worker-1","evento":"consulta","campos":{"chave":"039ef609","consulta":"virtual diferen\u00e7a thrashing"}}
+{"seq":98,"t":0.407112,"thr":"worker-0","evento":"cache","campos":{"chave":"533e241e","estado":"erro","tempo_s":0.028846}}
+{"seq":99,"t":0.407155,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"533e241e","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.00872628199999781}}
+{"seq":100,"t":0.40717,"thr":"worker-0","evento":"geracao","campos":{"chave":"533e241e","tempo_s":0.020089917999939644}}
+{"seq":101,"t":0.407224,"thr":"worker-0","evento":"consulta","campos":{"chave":"40e9336b","consulta":"thrashing mutex corrida"}}
+{"seq":102,"t":0.416163,"thr":"worker-1","evento":"cache","campos":{"chave":"039ef609","estado":"erro","tempo_s":0.028934}}
+{"seq":103,"t":0.416223,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"039ef609","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006191150999939055}}
+{"seq":104,"t":0.416239,"thr":"worker-1","evento":"geracao","campos":{"chave":"039ef609","tempo_s":0.022709821000034935}}
+{"seq":105,"t":0.416296,"thr":"worker-1","evento":"consulta","campos":{"chave":"fd98b163","consulta":"thrashing maiores mmap"}}
+{"seq":106,"t":0.441416,"thr":"worker-0","evento":"cache","campos":{"chave":"40e9336b","estado":"erro","tempo_s":0.03414}}
+{"seq":107,"t":0.44146,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"40e9336b","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.014016610999988188}}
+{"seq":108,"t":0.441476,"thr":"worker-0","evento":"geracao","campos":{"chave":"40e9336b","tempo_s":0.02008383700012928}}
+{"seq":109,"t":0.441531,"thr":"worker-0","evento":"consulta","campos":{"chave":"75591134","consulta":"kernel starvation virtual"}}
+{"seq":110,"t":0.44789,"thr":"worker-1","evento":"cache","campos":{"chave":"fd98b163","estado":"erro","tempo_s":0.031541}}
+{"seq":111,"t":0.44793,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"fd98b163","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.0061713630000213016}}
+{"seq":112,"t":0.447945,"thr":"worker-1","evento":"geracao","campos":{"chave":"fd98b163","tempo_s":0.025346002000105727}}
+{"seq":113,"t":0.447996,"thr":"worker-1","evento":"consulta","campos":{"chave":"4923a026","consulta":"pagina\u00e7\u00e3o starvation diferen\u00e7a"}}
+{"seq":114,"t":0.467972,"thr":"worker-0","evento":"cache","campos":{"chave":"75591134","estado":"erro","tempo_s":0.02638}}
+{"seq":115,"t":0.468011,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"75591134","n_trechos":5,"bytes_contexto":8192,"tempo_s":0.0062616260001959745}}
+{"seq":116,"t":0.468026,"thr":"worker-0","evento":"geracao","campos":{"chave":"75591134","tempo_s":0.020091282000066712}}
+{"seq":117,"t":0.468078,"thr":"worker-0","evento":"consulta","campos":{"chave":"2706a144","consulta":"starvation MemFree kernel"}}
+{"seq":118,"t":0.47431,"thr":"worker-1","evento":"cache","campos":{"chave":"4923a026","estado":"erro","tempo_s":0.026282}}
+{"seq":119,"t":0.474348,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"4923a026","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006144223000092097}}
+{"seq":120,"t":0.474367,"thr":"worker-1","evento":"geracao","campos":{"chave":"4923a026","tempo_s":0.020113734000005934}}
+{"seq":121,"t":0.474423,"thr":"worker-1","evento":"consulta","campos":{"chave":"43281f92","consulta":"swap pagina\u00e7\u00e3o m\u00fatua"}}
+{"seq":122,"t":0.494395,"thr":"worker-0","evento":"cache","campos":{"chave":"2706a144","estado":"erro","tempo_s":0.026248}}
+{"seq":123,"t":0.494449,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"2706a144","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.0061331009999321395}}
+{"seq":124,"t":0.494464,"thr":"worker-0","evento":"geracao","campos":{"chave":"2706a144","tempo_s":0.020087894999960554}}
+{"seq":125,"t":0.494519,"thr":"worker-0","evento":"consulta","campos":{"chave":"268bb26c","consulta":"entre exclus\u00e3o mutex"}}
+{"seq":126,"t":0.502595,"thr":"worker-1","evento":"cache","campos":{"chave":"43281f92","estado":"erro","tempo_s":0.028118}}
+{"seq":127,"t":0.502634,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"43281f92","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.008007464999991498}}
+{"seq":128,"t":0.502649,"thr":"worker-1","evento":"geracao","campos":{"chave":"43281f92","tempo_s":0.020084910000150558}}
+{"seq":129,"t":0.502702,"thr":"worker-1","evento":"consulta","campos":{"chave":"28499444","consulta":"exclus\u00e3o leitura p\u00e1ginas"}}
+{"seq":130,"t":0.520835,"thr":"worker-0","evento":"cache","campos":{"chave":"268bb26c","estado":"erro","tempo_s":0.026264}}
+{"seq":131,"t":0.520876,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"268bb26c","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006153300000050876}}
+{"seq":132,"t":0.52089,"thr":"worker-0","evento":"geracao","campos":{"chave":"268bb26c","tempo_s":0.020084067999960098}}
+{"seq":133,"t":0.520944,"thr":"worker-0","evento":"consulta","campos":{"chave":"98e40c8c","consulta":"swap m\u00fatua produtores"}}
+{"seq":134,"t":0.528996,"thr":"worker-1","evento":"cache","campos":{"chave":"28499444","estado":"erro","tempo_s":0.026243}}
+{"seq":135,"t":0.529036,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"28499444","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006135244999995848}}
+{"seq":136,"t":0.529051,"thr":"worker-1","evento":"geracao","campos":{"chave":"28499444","tempo_s":0.020082014000081472}}
+{"seq":137,"t":0.529103,"thr":"worker-1","evento":"consulta","campos":{"chave":"069a8753","consulta":"diferen\u00e7a mem\u00f3ria swap"}}
+{"seq":138,"t":0.547363,"thr":"worker-0","evento":"cache","campos":{"chave":"98e40c8c","estado":"erro","tempo_s":0.026368}}
+{"seq":139,"t":0.547405,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"98e40c8c","n_trechos":5,"bytes_contexto":8192,"tempo_s":0.006251625999993848}}
+{"seq":140,"t":0.547431,"thr":"worker-0","evento":"geracao","campos":{"chave":"98e40c8c","tempo_s":0.020088494999981776}}
+{"seq":141,"t":0.547495,"thr":"worker-0","evento":"consulta","campos":{"chave":"6d7af248","consulta":"cache faltas mutex"}}
+{"seq":142,"t":0.555333,"thr":"worker-1","evento":"cache","campos":{"chave":"069a8753","estado":"erro","tempo_s":0.026175}}
+{"seq":143,"t":0.555379,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"069a8753","n_trechos":5,"bytes_contexto":8192,"tempo_s":0.0060610640000504645}}
+{"seq":144,"t":0.555395,"thr":"worker-1","evento":"geracao","campos":{"chave":"069a8753","tempo_s":0.02008694200003447}}
+{"seq":145,"t":0.555455,"thr":"worker-1","evento":"consulta","campos":{"chave":"7f06488c","consulta":"leitura entre mem\u00f3ria"}}
+{"seq":146,"t":0.574777,"thr":"worker-0","evento":"cache","campos":{"chave":"6d7af248","estado":"erro","tempo_s":0.027227}}
+{"seq":147,"t":0.574825,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"6d7af248","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.007107072000053449}}
+{"seq":148,"t":0.57484,"thr":"worker-0","evento":"geracao","campos":{"chave":"6d7af248","tempo_s":0.020088857000018834}}
+{"seq":149,"t":0.574896,"thr":"worker-0","evento":"consulta","campos":{"chave":"1a8d0c44","consulta":"consumidores leitura p\u00e1ginas"}}
+{"seq":150,"t":0.582782,"thr":"worker-1","evento":"cache","campos":{"chave":"7f06488c","estado":"erro","tempo_s":0.02727}}
+{"seq":151,"t":0.582831,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"7f06488c","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.0071467600000687526}}
+{"seq":152,"t":0.582847,"thr":"worker-1","evento":"geracao","campos":{"chave":"7f06488c","tempo_s":0.020093986000119912}}
+{"seq":153,"t":0.582915,"thr":"worker-1","evento":"consulta","campos":{"chave":"70c7ae26","consulta":"de pagina\u00e7\u00e3o p\u00e1gina"}}
+{"seq":154,"t":0.601285,"thr":"worker-0","evento":"cache","campos":{"chave":"1a8d0c44","estado":"erro","tempo_s":0.026335}}
+{"seq":155,"t":0.601328,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"1a8d0c44","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.0062191450001591875}}
+{"seq":156,"t":0.601343,"thr":"worker-0","evento":"geracao","campos":{"chave":"1a8d0c44","tempo_s":0.02008631100011371}}
+{"seq":157,"t":0.601396,"thr":"worker-0","evento":"consulta","campos":{"chave":"77b3fb15","consulta":"pagina\u00e7\u00e3o MemAvailable kernel"}}
+{"seq":158,"t":0.609334,"thr":"worker-1","evento":"cache","campos":{"chave":"70c7ae26","estado":"erro","tempo_s":0.026365}}
+{"seq":159,"t":0.609377,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"70c7ae26","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.0062486910001098295}}
+{"seq":160,"t":0.609393,"thr":"worker-1","evento":"geracao","campos":{"chave":"70c7ae26","tempo_s":0.02008917700004531}}
+{"seq":161,"t":0.609446,"thr":"worker-1","evento":"consulta","campos":{"chave":"92bde3b6","consulta":"consumidores e maiores"}}
+{"seq":162,"t":0.627704,"thr":"worker-0","evento":"cache","campos":{"chave":"77b3fb15","estado":"erro","tempo_s":0.026254}}
+{"seq":163,"t":0.627759,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"77b3fb15","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006134344000201963}}
+{"seq":164,"t":0.627776,"thr":"worker-0","evento":"geracao","campos":{"chave":"77b3fb15","tempo_s":0.02009061900002962}}
+{"seq":165,"t":0.627833,"thr":"worker-0","evento":"consulta","campos":{"chave":"177c156d","consulta":"starvation menores mem\u00f3ria"}}
+{"seq":166,"t":0.636158,"thr":"worker-1","evento":"cache","campos":{"chave":"92bde3b6","estado":"erro","tempo_s":0.026659}}
+{"seq":167,"t":0.636202,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"92bde3b6","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006540286000017659}}
+{"seq":168,"t":0.636217,"thr":"worker-1","evento":"geracao","campos":{"chave":"92bde3b6","tempo_s":0.02009238400000868}}
+{"seq":169,"t":0.636274,"thr":"worker-1","evento":"consulta","campos":{"chave":"e580e257","consulta":"mutex pagina\u00e7\u00e3o e"}}
+{"seq":170,"t":0.654471,"thr":"worker-0","evento":"cache","campos":{"chave":"177c156d","estado":"erro","tempo_s":0.026583}}
+{"seq":171,"t":0.654515,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"177c156d","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006463701000029687}}
+{"seq":172,"t":0.65454,"thr":"worker-0","evento":"geracao","campos":{"chave":"177c156d","tempo_s":0.020089998000003106}}
+{"seq":173,"t":0.654601,"thr":"worker-0","evento":"consulta","campos":{"chave":"b4658c4d","consulta":"consumidores leitura de"}}
+{"seq":174,"t":0.662587,"thr":"worker-1","evento":"cache","campos":{"chave":"e580e257","estado":"erro","tempo_s":0.026256}}
+{"seq":175,"t":0.662635,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"e580e257","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006141816999843286}}
+{"seq":176,"t":0.662652,"thr":"worker-1","evento":"geracao","campos":{"chave":"e580e257","tempo_s":0.020087142999955176}}
+{"seq":177,"t":0.662709,"thr":"worker-1","evento":"consulta","campos":{"chave":"504947d6","consulta":"leitura com produtores"}}
+{"seq":178,"t":0.682233,"thr":"worker-0","evento":"cache","campos":{"chave":"b4658c4d","estado":"erro","tempo_s":0.027578}}
+{"seq":179,"t":0.682277,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"b4658c4d","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.007460955999931684}}
+{"seq":180,"t":0.682293,"thr":"worker-0","evento":"geracao","campos":{"chave":"b4658c4d","tempo_s":0.020086932999902274}}
+{"seq":181,"t":0.682345,"thr":"worker-0","evento":"consulta","campos":{"chave":"403d0c42","consulta":"maiores thrashing starvation"}}
+{"seq":182,"t":0.689029,"thr":"worker-1","evento":"cache","campos":{"chave":"504947d6","estado":"erro","tempo_s":0.026266}}
+{"seq":183,"t":0.689082,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"504947d6","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006157136999945578}}
+{"seq":184,"t":0.689098,"thr":"worker-1","evento":"geracao","campos":{"chave":"504947d6","tempo_s":0.020083555999917735}}
+{"seq":185,"t":0.689151,"thr":"worker-1","evento":"consulta","campos":{"chave":"67851188","consulta":"entre e kernel"}}
+{"seq":186,"t":0.708743,"thr":"worker-0","evento":"cache","campos":{"chave":"403d0c42","estado":"erro","tempo_s":0.026344}}
+{"seq":187,"t":0.708791,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"403d0c42","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006229102999895986}}
+{"seq":188,"t":0.708813,"thr":"worker-0","evento":"geracao","campos":{"chave":"403d0c42","tempo_s":0.020088475999955335}}
+{"seq":189,"t":0.708868,"thr":"worker-0","evento":"consulta","campos":{"chave":"d4988607","consulta":"leitura e virtual"}}
+{"seq":190,"t":0.71561,"thr":"worker-1","evento":"cache","campos":{"chave":"67851188","estado":"erro","tempo_s":0.026408}}
+{"seq":191,"t":0.715649,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"67851188","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006299128000136989}}
+{"seq":192,"t":0.715664,"thr":"worker-1","evento":"geracao","campos":{"chave":"67851188","tempo_s":0.0200810310000179}}
+{"seq":193,"t":0.715718,"thr":"worker-1","evento":"consulta","campos":{"chave":"50750b98","consulta":"MemFree diferen\u00e7a m\u00fatua"}}
+{"seq":194,"t":0.735575,"thr":"worker-0","evento":"cache","campos":{"chave":"d4988607","estado":"erro","tempo_s":0.026655}}
+{"seq":195,"t":0.735616,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"d4988607","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006541196999933163}}
+{"seq":196,"t":0.735631,"thr":"worker-0","evento":"geracao","campos":{"chave":"d4988607","tempo_s":0.02008437800009233}}
+{"seq":197,"t":0.73568,"thr":"worker-0","evento":"consulta","campos":{"chave":"6b445b2f","consulta":"faltas thrashing deadlock"}}
+{"seq":198,"t":0.742356,"thr":"worker-1","evento":"cache","campos":{"chave":"50750b98","estado":"erro","tempo_s":0.026584}}
+{"seq":199,"t":0.7424,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"50750b98","n_trechos":5,"bytes_contexto":8192,"tempo_s":0.006471313000020018}}
+{"seq":200,"t":0.74242,"thr":"worker-1","evento":"geracao","campos":{"chave":"50750b98","tempo_s":0.02008594400012953}}
+{"seq":201,"t":0.742477,"thr":"worker-1","evento":"consulta","campos":{"chave":"a4c9c658","consulta":"mem\u00f3ria entre mmap"}}
+{"seq":202,"t":0.762359,"thr":"worker-0","evento":"cache","campos":{"chave":"6b445b2f","estado":"erro","tempo_s":0.026627}}
+{"seq":203,"t":0.762399,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"6b445b2f","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006511790999866207}}
+{"seq":204,"t":0.762414,"thr":"worker-0","evento":"geracao","campos":{"chave":"6b445b2f","tempo_s":0.02008722300001864}}
+{"seq":205,"t":0.762488,"thr":"worker-0","evento":"consulta","campos":{"chave":"b7d0dbfb","consulta":"virtual pagina\u00e7\u00e3o MemAvailable"}}
+{"seq":206,"t":0.768887,"thr":"worker-1","evento":"cache","campos":{"chave":"a4c9c658","estado":"erro","tempo_s":0.026353}}
+{"seq":207,"t":0.768928,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"a4c9c658","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006161434999967241}}
+{"seq":208,"t":0.768942,"thr":"worker-1","evento":"geracao","campos":{"chave":"a4c9c658","tempo_s":0.020082965000028707}}
+{"seq":209,"t":0.769003,"thr":"worker-1","evento":"consulta","campos":{"chave":"fd8ce316","consulta":"MemAvailable produtores corrida"}}
+{"seq":210,"t":0.788761,"thr":"worker-0","evento":"cache","campos":{"chave":"b7d0dbfb","estado":"erro","tempo_s":0.026219}}
+{"seq":211,"t":0.788802,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"b7d0dbfb","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.0061002889999599574}}
+{"seq":212,"t":0.788818,"thr":"worker-0","evento":"geracao","campos":{"chave":"b7d0dbfb","tempo_s":0.020091069999807587}}
+{"seq":213,"t":0.788872,"thr":"worker-0","evento":"consulta","campos":{"chave":"242c452a","consulta":"p\u00e1ginas virtual swap"}}
+{"seq":214,"t":0.7953,"thr":"worker-1","evento":"cache","campos":{"chave":"fd8ce316","estado":"erro","tempo_s":0.026235}}
+{"seq":215,"t":0.795341,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"fd8ce316","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006075260999978127}}
+{"seq":216,"t":0.795356,"thr":"worker-1","evento":"geracao","campos":{"chave":"fd8ce316","tempo_s":0.020135165000056077}}
+{"seq":217,"t":0.795408,"thr":"worker-1","evento":"consulta","campos":{"chave":"aed5058b","consulta":"maiores de entre"}}
+{"seq":218,"t":0.815384,"thr":"worker-0","evento":"cache","campos":{"chave":"242c452a","estado":"erro","tempo_s":0.026449}}
+{"seq":219,"t":0.815425,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"242c452a","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.0063301560001036705}}
+{"seq":220,"t":0.81544,"thr":"worker-0","evento":"geracao","campos":{"chave":"242c452a","tempo_s":0.02009116199997152}}
+{"seq":221,"t":0.815496,"thr":"worker-0","evento":"consulta","campos":{"chave":"4069a05a","consulta":"p\u00e1gina condi\u00e7\u00e3o leitura"}}
+{"seq":222,"t":0.821893,"thr":"worker-1","evento":"cache","campos":{"chave":"aed5058b","estado":"erro","tempo_s":0.026434}}
+{"seq":223,"t":0.821934,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"aed5058b","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006195259999913105}}
+{"seq":224,"t":0.821949,"thr":"worker-1","evento":"geracao","campos":{"chave":"aed5058b","tempo_s":0.020214866000060283}}
+{"seq":225,"t":0.822003,"thr":"worker-1","evento":"consulta","campos":{"chave":"229f5786","consulta":"starvation mem\u00f3ria e"}}
+{"seq":226,"t":0.84197,"thr":"worker-0","evento":"cache","campos":{"chave":"4069a05a","estado":"erro","tempo_s":0.026421}}
+{"seq":227,"t":0.84201,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"4069a05a","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006310107999979664}}
+{"seq":228,"t":0.842025,"thr":"worker-0","evento":"geracao","campos":{"chave":"4069a05a","tempo_s":0.020083866999812017}}
+{"seq":229,"t":0.842078,"thr":"worker-0","evento":"consulta","campos":{"chave":"ec2e5aa8","consulta":"exclus\u00e3o virtual MemFree"}}
+{"seq":230,"t":0.848331,"thr":"worker-1","evento":"cache","campos":{"chave":"229f5786","estado":"erro","tempo_s":0.026275}}
+{"seq":231,"t":0.848371,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"229f5786","n_trechos":5,"bytes_contexto":8192,"tempo_s":0.006178033999958643}}
+{"seq":232,"t":0.848386,"thr":"worker-1","evento":"geracao","campos":{"chave":"229f5786","tempo_s":0.02006931899995834}}
+{"seq":233,"t":0.848437,"thr":"worker-1","evento":"consulta","campos":{"chave":"cb5052a4","consulta":"mutex maiores menores"}}
+{"seq":234,"t":0.868397,"thr":"worker-0","evento":"cache","campos":{"chave":"ec2e5aa8","estado":"erro","tempo_s":0.026269}}
+{"seq":235,"t":0.868437,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"ec2e5aa8","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006151273999876139}}
+{"seq":236,"t":0.868452,"thr":"worker-0","evento":"geracao","campos":{"chave":"ec2e5aa8","tempo_s":0.02009013099996082}}
+{"seq":237,"t":0.868506,"thr":"worker-0","evento":"consulta","campos":{"chave":"6803916b","consulta":"mem\u00f3ria maiores corrida"}}
+{"seq":238,"t":0.874758,"thr":"worker-1","evento":"cache","campos":{"chave":"cb5052a4","estado":"erro","tempo_s":0.026269}}
+{"seq":239,"t":0.874797,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"cb5052a4","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006014555999854565}}
+{"seq":240,"t":0.874811,"thr":"worker-1","evento":"geracao","campos":{"chave":"cb5052a4","tempo_s":0.02022987700001977}}
+{"seq":241,"t":0.874865,"thr":"worker-1","evento":"consulta","campos":{"chave":"4bab8514","consulta":"entre p\u00e1gina starvation"}}
+{"seq":242,"t":0.894848,"thr":"worker-0","evento":"cache","campos":{"chave":"6803916b","estado":"erro","tempo_s":0.026289}}
+{"seq":243,"t":0.894897,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"6803916b","n_trechos":5,"bytes_contexto":8192,"tempo_s":0.00616562300001533}}
+{"seq":244,"t":0.894924,"thr":"worker-0","evento":"geracao","campos":{"chave":"6803916b","tempo_s":0.020093563000045833}}
+{"seq":245,"t":0.89498,"thr":"worker-0","evento":"consulta","campos":{"chave":"f8d8d5bd","consulta":"kernel p\u00e1ginas e"}}
+{"seq":246,"t":0.903816,"thr":"worker-1","evento":"cache","campos":{"chave":"4bab8514","estado":"erro","tempo_s":0.028899}}
+{"seq":247,"t":0.903859,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"4bab8514","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006610227999999552}}
+{"seq":248,"t":0.903887,"thr":"worker-1","evento":"geracao","campos":{"chave":"4bab8514","tempo_s":0.02226327899984426}}
+{"seq":249,"t":0.903949,"thr":"worker-1","evento":"consulta","campos":{"chave":"c9e649b3","consulta":"virtual pagina\u00e7\u00e3o leitura"}}
+{"seq":250,"t":0.9239,"thr":"worker-0","evento":"cache","campos":{"chave":"f8d8d5bd","estado":"erro","tempo_s":0.028867}}
+{"seq":251,"t":0.923945,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"f8d8d5bd","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.008747612999968624}}
+{"seq":252,"t":0.923961,"thr":"worker-0","evento":"geracao","campos":{"chave":"f8d8d5bd","tempo_s":0.020090591999860408}}
+{"seq":253,"t":0.924017,"thr":"worker-0","evento":"consulta","campos":{"chave":"c2770983","consulta":"maiores menores p\u00e1gina"}}
+{"seq":254,"t":0.930517,"thr":"worker-1","evento":"cache","campos":{"chave":"c9e649b3","estado":"erro","tempo_s":0.026508}}
+{"seq":255,"t":0.930564,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"c9e649b3","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006391291999989335}}
+{"seq":256,"t":0.930579,"thr":"worker-1","evento":"geracao","campos":{"chave":"c9e649b3","tempo_s":0.02008824699987599}}
+{"seq":257,"t":0.930636,"thr":"worker-1","evento":"consulta","campos":{"chave":"a56aafbb","consulta":"produtores maiores corrida"}}
+{"seq":258,"t":0.950501,"thr":"worker-0","evento":"cache","campos":{"chave":"c2770983","estado":"erro","tempo_s":0.02643}}
+{"seq":259,"t":0.950555,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"c2770983","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006309916999953202}}
+{"seq":260,"t":0.950573,"thr":"worker-0","evento":"geracao","campos":{"chave":"c2770983","tempo_s":0.02009126099983405}}
+{"seq":261,"t":0.95063,"thr":"worker-0","evento":"consulta","campos":{"chave":"f78325d2","consulta":"menores MemAvailable p\u00e1gina"}}
+{"seq":262,"t":0.957048,"thr":"worker-1","evento":"cache","campos":{"chave":"a56aafbb","estado":"erro","tempo_s":0.02636}}
+{"seq":263,"t":0.957089,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"a56aafbb","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006090439999979935}}
+{"seq":264,"t":0.957104,"thr":"worker-1","evento":"geracao","campos":{"chave":"a56aafbb","tempo_s":0.02024428100003206}}
+{"seq":265,"t":0.957157,"thr":"worker-1","evento":"consulta","campos":{"chave":"39c35ed0","consulta":"kernel starvation e"}}
+{"seq":266,"t":0.977134,"thr":"worker-0","evento":"cache","campos":{"chave":"f78325d2","estado":"erro","tempo_s":0.02645}}
+{"seq":267,"t":0.977182,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"f78325d2","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006328942999971332}}
+{"seq":268,"t":0.977199,"thr":"worker-0","evento":"geracao","campos":{"chave":"f78325d2","tempo_s":0.020091011000204162}}
+{"seq":269,"t":0.977256,"thr":"worker-0","evento":"consulta","campos":{"chave":"5c3f72e0","consulta":"maiores mem\u00f3ria consumidores"}}
+{"seq":270,"t":0.98347,"thr":"worker-1","evento":"cache","campos":{"chave":"39c35ed0","estado":"erro","tempo_s":0.026252}}
+{"seq":271,"t":0.983523,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"39c35ed0","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006145535999849017}}
+{"seq":272,"t":0.983539,"thr":"worker-1","evento":"geracao","campos":{"chave":"39c35ed0","tempo_s":0.020073004999858313}}
+{"seq":273,"t":0.983692,"thr":"worker-1","evento":"consulta","campos":{"chave":"d69a1556","consulta":"virtual leitura exclus\u00e3o"}}
+{"seq":274,"t":1.004335,"thr":"worker-0","evento":"cache","campos":{"chave":"5c3f72e0","estado":"erro","tempo_s":0.02702}}
+{"seq":275,"t":1.004392,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"5c3f72e0","n_trechos":5,"bytes_contexto":8192,"tempo_s":0.006902714000034393}}
+{"seq":276,"t":1.004428,"thr":"worker-0","evento":"geracao","campos":{"chave":"5c3f72e0","tempo_s":0.02008633299988105}}
+{"seq":277,"t":1.004492,"thr":"worker-0","evento":"consulta","campos":{"chave":"dba7a105","consulta":"maiores p\u00e1gina starvation"}}
+{"seq":278,"t":1.010769,"thr":"worker-1","evento":"cache","campos":{"chave":"d69a1556","estado":"erro","tempo_s":0.026517}}
+{"seq":279,"t":1.010805,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"d69a1556","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006324696000092445}}
+{"seq":280,"t":1.010819,"thr":"worker-1","evento":"geracao","campos":{"chave":"d69a1556","tempo_s":0.020166324000001623}}
+{"seq":281,"t":1.01087,"thr":"worker-1","evento":"consulta","campos":{"chave":"9933b853","consulta":"exclus\u00e3o e MemAvailable"}}
+{"seq":282,"t":1.030849,"thr":"worker-0","evento":"cache","campos":{"chave":"dba7a105","estado":"erro","tempo_s":0.026303}}
+{"seq":283,"t":1.03089,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"dba7a105","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006190810999896712}}
+{"seq":284,"t":1.030905,"thr":"worker-0","evento":"geracao","campos":{"chave":"dba7a105","tempo_s":0.02008382700000766}}
+{"seq":285,"t":1.030959,"thr":"worker-0","evento":"consulta","campos":{"chave":"ea1f5671","consulta":"MemFree p\u00e1ginas virtual"}}
+{"seq":286,"t":1.037455,"thr":"worker-1","evento":"cache","campos":{"chave":"9933b853","estado":"erro","tempo_s":0.02653}}
+{"seq":287,"t":1.037497,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"9933b853","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.00601811199999247}}
+{"seq":288,"t":1.037512,"thr":"worker-1","evento":"geracao","campos":{"chave":"9933b853","tempo_s":0.020084549000102925}}
+{"seq":289,"t":1.037566,"thr":"worker-1","evento":"consulta","campos":{"chave":"6254b968","consulta":"menores do faltas"}}
+{"seq":290,"t":1.057336,"thr":"worker-0","evento":"cache","campos":{"chave":"ea1f5671","estado":"erro","tempo_s":0.026324}}
+{"seq":291,"t":1.057386,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"ea1f5671","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006214276000036989}}
+{"seq":292,"t":1.057401,"thr":"worker-0","evento":"geracao","campos":{"chave":"ea1f5671","tempo_s":0.020083285999817235}}
+{"seq":293,"t":1.05745,"thr":"worker-0","evento":"consulta","campos":{"chave":"78dead48","consulta":"MemAvailable faltas produtores"}}
+{"seq":294,"t":1.063848,"thr":"worker-1","evento":"cache","campos":{"chave":"6254b968","estado":"erro","tempo_s":0.026229}}
+{"seq":295,"t":1.063893,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"6254b968","n_trechos":5,"bytes_contexto":8192,"tempo_s":0.0061296349999793165}}
+{"seq":296,"t":1.063907,"thr":"worker-1","evento":"geracao","campos":{"chave":"6254b968","tempo_s":0.02007102299990038}}
+{"seq":297,"t":1.063975,"thr":"worker-1","evento":"consulta","campos":{"chave":"cd3528b7","consulta":"de mmap consumidores"}}
+{"seq":298,"t":1.084477,"thr":"worker-0","evento":"cache","campos":{"chave":"78dead48","estado":"erro","tempo_s":0.026975}}
+{"seq":299,"t":1.084519,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"78dead48","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006858350000129576}}
+{"seq":300,"t":1.084535,"thr":"worker-0","evento":"geracao","campos":{"chave":"78dead48","tempo_s":0.020088296000039918}}
+{"seq":301,"t":1.084592,"thr":"worker-0","evento":"consulta","campos":{"chave":"2459b3b4","consulta":"deadlock com p\u00e1gina"}}
+{"seq":302,"t":1.090898,"thr":"worker-1","evento":"cache","campos":{"chave":"cd3528b7","estado":"erro","tempo_s":0.026512}}
+{"seq":303,"t":1.090936,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"cd3528b7","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006353840999963722}}
+{"seq":304,"t":1.090951,"thr":"worker-1","evento":"geracao","campos":{"chave":"cd3528b7","tempo_s":0.020130375000007916}}
+{"seq":305,"t":1.091016,"thr":"worker-1","evento":"consulta","campos":{"chave":"bd192c0c","consulta":"starvation cache p\u00e1gina"}}
+{"seq":306,"t":1.110986,"thr":"worker-0","evento":"cache","campos":{"chave":"2459b3b4","estado":"erro","tempo_s":0.02634}}
+{"seq":307,"t":1.111032,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"2459b3b4","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006220066999958362}}
+{"seq":308,"t":1.111051,"thr":"worker-0","evento":"geracao","campos":{"chave":"2459b3b4","tempo_s":0.02009219300020959}}
+{"seq":309,"t":1.11111,"thr":"worker-0","evento":"consulta","campos":{"chave":"b84dd54c","consulta":"diferen\u00e7a cache consumidores"}}
+{"seq":310,"t":1.119618,"thr":"worker-1","evento":"cache","campos":{"chave":"bd192c0c","estado":"erro","tempo_s":0.028547}}
+{"seq":311,"t":1.119659,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"bd192c0c","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.008427404000030947}}
+{"seq":312,"t":1.119674,"thr":"worker-1","evento":"geracao","campos":{"chave":"bd192c0c","tempo_s":0.020091661999913413}}
+{"seq":313,"t":1.119729,"thr":"worker-1","evento":"consulta","campos":{"chave":"5fbf906d","consulta":"p\u00e1ginas thrashing deadlock"}}
+{"seq":314,"t":1.137526,"thr":"worker-0","evento":"cache","campos":{"chave":"b84dd54c","estado":"erro","tempo_s":0.026353}}
+{"seq":315,"t":1.137565,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"b84dd54c","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006235575000118843}}
+{"seq":316,"t":1.137579,"thr":"worker-0","evento":"geracao","campos":{"chave":"b84dd54c","tempo_s":0.020089408999865555}}
+{"seq":317,"t":1.13763,"thr":"worker-0","evento":"consulta","campos":{"chave":"84609638","consulta":"virtual consumidores mutex"}}
+{"seq":318,"t":1.146376,"thr":"worker-1","evento":"cache","campos":{"chave":"5fbf906d","estado":"erro","tempo_s":0.026594}}
+{"seq":319,"t":1.146417,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"5fbf906d","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.0064937049999116425}}
+{"seq":320,"t":1.146432,"thr":"worker-1","evento":"geracao","campos":{"chave":"5fbf906d","tempo_s":0.02007599500007018}}
+{"seq":321,"t":1.146483,"thr":"worker-1","evento":"consulta","campos":{"chave":"deee819e","consulta":"mutex cache starvation"}}
+{"seq":322,"t":1.166456,"thr":"worker-0","evento":"cache","campos":{"chave":"84609638","estado":"erro","tempo_s":0.028774}}
+{"seq":323,"t":1.166508,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"84609638","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.00864759299997786}}
+{"seq":324,"t":1.166524,"thr":"worker-0","evento":"geracao","campos":{"chave":"84609638","tempo_s":0.020086431999970955}}
+{"seq":325,"t":1.166578,"thr":"worker-0","evento":"consulta","campos":{"chave":"478790b2","consulta":"diferen\u00e7a faltas m\u00fatua"}}
+{"seq":326,"t":1.173309,"thr":"worker-1","evento":"cache","campos":{"chave":"deee819e","estado":"erro","tempo_s":0.026766}}
+{"seq":327,"t":1.173345,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"deee819e","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006107693000103609}}
+{"seq":328,"t":1.17336,"thr":"worker-1","evento":"geracao","campos":{"chave":"deee819e","tempo_s":0.020634323999956905}}
+{"seq":329,"t":1.173412,"thr":"worker-1","evento":"consulta","campos":{"chave":"2eef57ae","consulta":"produtores deadlock de"}}
+{"seq":330,"t":1.19339,"thr":"worker-0","evento":"cache","campos":{"chave":"478790b2","estado":"erro","tempo_s":0.02676}}
+{"seq":331,"t":1.193431,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"478790b2","n_trechos":5,"bytes_contexto":8192,"tempo_s":0.006642621000082727}}
+{"seq":332,"t":1.193447,"thr":"worker-0","evento":"geracao","campos":{"chave":"478790b2","tempo_s":0.02008776399998169}}
+{"seq":333,"t":1.193501,"thr":"worker-0","evento":"consulta","campos":{"chave":"fececa6b","consulta":"MemAvailable diferen\u00e7a entre"}}
+{"seq":334,"t":1.199734,"thr":"worker-1","evento":"cache","campos":{"chave":"2eef57ae","estado":"erro","tempo_s":0.026265}}
+{"seq":335,"t":1.199783,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"2eef57ae","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006146617000013066}}
+{"seq":336,"t":1.199808,"thr":"worker-1","evento":"geracao","campos":{"chave":"2eef57ae","tempo_s":0.020094337000045925}}
+{"seq":337,"t":1.199874,"thr":"worker-1","evento":"consulta","campos":{"chave":"bcd8ee87","consulta":"menores consumidores e"}}
+{"seq":338,"t":1.219821,"thr":"worker-0","evento":"cache","campos":{"chave":"fececa6b","estado":"erro","tempo_s":0.026265}}
+{"seq":339,"t":1.219865,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"fececa6b","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006142810000028476}}
+{"seq":340,"t":1.219882,"thr":"worker-0","evento":"geracao","campos":{"chave":"fececa6b","tempo_s":0.02009189199998218}}
+{"seq":341,"t":1.219936,"thr":"worker-0","evento":"consulta","campos":{"chave":"724477f0","consulta":"corrida deadlock com"}}
+{"seq":342,"t":1.228172,"thr":"worker-1","evento":"cache","campos":{"chave":"bcd8ee87","estado":"erro","tempo_s":0.028228}}
+{"seq":343,"t":1.228224,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"bcd8ee87","n_trechos":5,"bytes_contexto":8192,"tempo_s":0.006278076999933546}}
+{"seq":344,"t":1.22824,"thr":"worker-1","evento":"geracao","campos":{"chave":"bcd8ee87","tempo_s":0.021914808000019548}}
+{"seq":345,"t":1.228296,"thr":"worker-1","evento":"consulta","campos":{"chave":"992b2384","consulta":"consumidores deadlock leitura"}}
+{"seq":346,"t":1.253875,"thr":"worker-0","evento":"cache","campos":{"chave":"724477f0","estado":"erro","tempo_s":0.033886}}
+{"seq":347,"t":1.253917,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"724477f0","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.013769111000101475}}
+{"seq":348,"t":1.253933,"thr":"worker-0","evento":"geracao","campos":{"chave":"724477f0","tempo_s":0.02008547999980692}}
+{"seq":349,"t":1.253986,"thr":"worker-0","evento":"consulta","campos":{"chave":"ee37f3cf","consulta":"leitura corrida virtual"}}
+{"seq":350,"t":1.260157,"thr":"worker-1","evento":"cache","campos":{"chave":"992b2384","estado":"erro","tempo_s":0.031806}}
+{"seq":351,"t":1.260199,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"992b2384","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006322712000155661}}
+{"seq":352,"t":1.260214,"thr":"worker-1","evento":"geracao","campos":{"chave":"992b2384","tempo_s":0.025455010000086986}}
+{"seq":353,"t":1.26027,"thr":"worker-1","evento":"consulta","campos":{"chave":"4a4dd9f6","consulta":"deadlock mmap m\u00fatua"}}
+{"seq":354,"t":1.290922,"thr":"worker-0","evento":"cache","campos":{"chave":"ee37f3cf","estado":"erro","tempo_s":0.036883}}
+{"seq":355,"t":1.290964,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"ee37f3cf","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.016767309999977442}}
+{"seq":356,"t":1.290985,"thr":"worker-0","evento":"geracao","campos":{"chave":"ee37f3cf","tempo_s":0.020086232000039672}}
+{"seq":357,"t":1.291036,"thr":"worker-0","evento":"consulta","campos":{"chave":"2938de4c","consulta":"MemAvailable de entre"}}
+{"seq":358,"t":1.296226,"thr":"worker-1","evento":"cache","campos":{"chave":"4a4dd9f6","estado":"erro","tempo_s":0.035882}}
+{"seq":359,"t":1.296342,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"4a4dd9f6","n_trechos":5,"bytes_contexto":8192,"tempo_s":0.0111847560001479}}
+{"seq":360,"t":1.296389,"thr":"worker-1","evento":"geracao","campos":{"chave":"4a4dd9f6","tempo_s":0.02462384899990866}}
+{"seq":361,"t":1.296509,"thr":"worker-1","evento":"consulta","campos":{"chave":"87a91209","consulta":"do kernel com"}}
+{"seq":362,"t":1.323026,"thr":"worker-1","evento":"cache","campos":{"chave":"87a91209","estado":"erro","tempo_s":0.026444}}
+{"seq":363,"t":1.323065,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"87a91209","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.0063267099999393395}}
+{"seq":364,"t":1.323081,"thr":"worker-1","evento":"geracao","campos":{"chave":"87a91209","tempo_s":0.02008573000011893}}
+{"seq":365,"t":1.323133,"thr":"worker-1","evento":"consulta","campos":{"chave":"62fa9707","consulta":"virtual consumidores faltas"}}
+{"seq":366,"t":1.323531,"thr":"worker-0","evento":"cache","campos":{"chave":"2938de4c","estado":"erro","tempo_s":0.032446}}
+{"seq":367,"t":1.323563,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"2938de4c","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.012349281000069823}}
+{"seq":368,"t":1.323582,"thr":"worker-0","evento":"geracao","campos":{"chave":"2938de4c","tempo_s":0.020068977999926574}}
+{"seq":369,"t":1.323654,"thr":"worker-0","evento":"consulta","campos":{"chave":"a42906e6","consulta":"do exclus\u00e3o p\u00e1gina"}}
+{"seq":370,"t":1.350537,"thr":"worker-1","evento":"cache","campos":{"chave":"62fa9707","estado":"erro","tempo_s":0.027339}}
+{"seq":371,"t":1.350589,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"62fa9707","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.007219827999961126}}
+{"seq":372,"t":1.350605,"thr":"worker-1","evento":"geracao","campos":{"chave":"62fa9707","tempo_s":0.020085259999859773}}
+{"seq":373,"t":1.350666,"thr":"worker-1","evento":"consulta","campos":{"chave":"217e8658","consulta":"exclus\u00e3o maiores p\u00e1ginas"}}
+{"seq":374,"t":1.356161,"thr":"worker-0","evento":"cache","campos":{"chave":"a42906e6","estado":"erro","tempo_s":0.03242}}
+{"seq":375,"t":1.356228,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"a42906e6","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.01228979799998342}}
+{"seq":376,"t":1.356243,"thr":"worker-0","evento":"geracao","campos":{"chave":"a42906e6","tempo_s":0.020079838999890853}}
+{"seq":377,"t":1.356349,"thr":"worker-0","evento":"consulta","campos":{"chave":"c867a996","consulta":"deadlock swap pagina\u00e7\u00e3o"}}
+{"seq":378,"t":1.37714,"thr":"worker-1","evento":"cache","campos":{"chave":"217e8658","estado":"erro","tempo_s":0.026418}}
+{"seq":379,"t":1.377194,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"217e8658","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006304878000037206}}
+{"seq":380,"t":1.37721,"thr":"worker-1","evento":"geracao","campos":{"chave":"217e8658","tempo_s":0.020083376000002318}}
+{"seq":381,"t":1.377267,"thr":"worker-1","evento":"consulta","campos":{"chave":"e01c2f0c","consulta":"m\u00fatua leitura faltas"}}
+{"seq":382,"t":1.383516,"thr":"worker-0","evento":"cache","campos":{"chave":"c867a996","estado":"erro","tempo_s":0.02646}}
+{"seq":383,"t":1.383558,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"c867a996","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006021819999887157}}
+{"seq":384,"t":1.383572,"thr":"worker-0","evento":"geracao","campos":{"chave":"c867a996","tempo_s":0.02041061699992497}}
+{"seq":385,"t":1.383626,"thr":"worker-0","evento":"consulta","campos":{"chave":"bdbc0c4d","consulta":"menores exclus\u00e3o p\u00e1ginas"}}
+{"seq":386,"t":1.403597,"thr":"worker-1","evento":"cache","campos":{"chave":"e01c2f0c","estado":"erro","tempo_s":0.026275}}
+{"seq":387,"t":1.40364,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"e01c2f0c","n_trechos":5,"bytes_contexto":8192,"tempo_s":0.0061583990000144695}}
+{"seq":388,"t":1.403655,"thr":"worker-1","evento":"geracao","campos":{"chave":"e01c2f0c","tempo_s":0.02008818599983897}}
+{"seq":389,"t":1.403708,"thr":"worker-1","evento":"consulta","campos":{"chave":"1650153c","consulta":"MemAvailable entre mutex"}}
+{"seq":390,"t":1.410232,"thr":"worker-0","evento":"cache","campos":{"chave":"bdbc0c4d","estado":"erro","tempo_s":0.026553}}
+{"seq":391,"t":1.410276,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"bdbc0c4d","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006184179000001677}}
+{"seq":392,"t":1.41029,"thr":"worker-0","evento":"geracao","campos":{"chave":"bdbc0c4d","tempo_s":0.02034256000001733}}
+{"seq":393,"t":1.410346,"thr":"worker-0","evento":"consulta","campos":{"chave":"b00498b5","consulta":"condi\u00e7\u00e3o MemFree pagina\u00e7\u00e3o"}}
+{"seq":394,"t":1.430318,"thr":"worker-1","evento":"cache","campos":{"chave":"1650153c","estado":"erro","tempo_s":0.026555}}
+{"seq":395,"t":1.430368,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"1650153c","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.0064228129999719386}}
+{"seq":396,"t":1.430407,"thr":"worker-1","evento":"geracao","campos":{"chave":"1650153c","tempo_s":0.020090719000108948}}
+{"seq":397,"t":1.430483,"thr":"worker-1","evento":"consulta","campos":{"chave":"7ac7ba99","consulta":"mutex mmap exclus\u00e3o"}}
+{"seq":398,"t":1.437137,"thr":"worker-0","evento":"cache","campos":{"chave":"b00498b5","estado":"erro","tempo_s":0.026736}}
+{"seq":399,"t":1.437179,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"b00498b5","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006118131999983234}}
+{"seq":400,"t":1.437195,"thr":"worker-0","evento":"geracao","campos":{"chave":"b00498b5","tempo_s":0.020591290999846024}}
+{"seq":401,"t":1.43725,"thr":"worker-0","evento":"consulta","campos":{"chave":"6cbe3f0b","consulta":"m\u00fatua leitura mutex"}}
+{"seq":402,"t":1.457229,"thr":"worker-1","evento":"cache","campos":{"chave":"7ac7ba99","estado":"erro","tempo_s":0.026681}}
+{"seq":403,"t":1.457281,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"7ac7ba99","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006553761000077429}}
+{"seq":404,"t":1.457297,"thr":"worker-1","evento":"geracao","campos":{"chave":"7ac7ba99","tempo_s":0.020092353000109142}}
+{"seq":405,"t":1.457358,"thr":"worker-1","evento":"consulta","campos":{"chave":"69d50053","consulta":"condi\u00e7\u00e3o virtual corrida"}}
+{"seq":406,"t":1.466935,"thr":"worker-0","evento":"cache","campos":{"chave":"6cbe3f0b","estado":"erro","tempo_s":0.029626}}
+{"seq":407,"t":1.466985,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"6cbe3f0b","n_trechos":5,"bytes_contexto":8192,"tempo_s":0.009500954000031925}}
+{"seq":408,"t":1.467,"thr":"worker-0","evento":"geracao","campos":{"chave":"6cbe3f0b","tempo_s":0.020092492999992828}}
+{"seq":409,"t":1.467058,"thr":"worker-0","evento":"consulta","campos":{"chave":"1ae68a09","consulta":"de mmap p\u00e1gina"}}
+{"seq":410,"t":1.48498,"thr":"worker-1","evento":"cache","campos":{"chave":"69d50053","estado":"erro","tempo_s":0.027566}}
+{"seq":411,"t":1.485038,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"69d50053","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.007439264999902662}}
+{"seq":412,"t":1.485055,"thr":"worker-1","evento":"geracao","campos":{"chave":"69d50053","tempo_s":0.02009123199991336}}
+{"seq":413,"t":1.485112,"thr":"worker-1","evento":"consulta","campos":{"chave":"cdc30cbe","consulta":"cache starvation diferen\u00e7a"}}
+{"seq":414,"t":1.493832,"thr":"worker-0","evento":"cache","campos":{"chave":"1ae68a09","estado":"erro","tempo_s":0.02672}}
+{"seq":415,"t":1.493875,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"1ae68a09","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006609195999999429}}
+{"seq":416,"t":1.493891,"thr":"worker-0","evento":"geracao","campos":{"chave":"1ae68a09","tempo_s":0.02008151299992278}}
+{"seq":417,"t":1.493944,"thr":"worker-0","evento":"consulta","campos":{"chave":"98b4942e","consulta":"de leitura mmap"}}
+{"seq":418,"t":1.511477,"thr":"worker-1","evento":"cache","campos":{"chave":"cdc30cbe","estado":"erro","tempo_s":0.026311}}
+{"seq":419,"t":1.511525,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"cdc30cbe","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006203134000088539}}
+{"seq":420,"t":1.511553,"thr":"worker-1","evento":"geracao","campos":{"chave":"cdc30cbe","tempo_s":0.02008029999979044}}
+{"seq":421,"t":1.511617,"thr":"worker-1","evento":"consulta","campos":{"chave":"012fdb5f","consulta":"pagina\u00e7\u00e3o consumidores exclus\u00e3o"}}
+{"seq":422,"t":1.523176,"thr":"worker-0","evento":"cache","campos":{"chave":"98b4942e","estado":"erro","tempo_s":0.02918}}
+{"seq":423,"t":1.523218,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"98b4942e","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.009061548999852675}}
+{"seq":424,"t":1.523234,"thr":"worker-0","evento":"geracao","campos":{"chave":"98b4942e","tempo_s":0.020090750000008484}}
+{"seq":425,"t":1.52329,"thr":"worker-0","evento":"consulta","campos":{"chave":"d19c5516","consulta":"mem\u00f3ria p\u00e1gina do"}}
+{"seq":426,"t":1.53795,"thr":"worker-1","evento":"cache","campos":{"chave":"012fdb5f","estado":"erro","tempo_s":0.026277}}
+{"seq":427,"t":1.537995,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"012fdb5f","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006168087999867566}}
+{"seq":428,"t":1.53801,"thr":"worker-1","evento":"geracao","campos":{"chave":"012fdb5f","tempo_s":0.020082002999970427}}
+{"seq":429,"t":1.538064,"thr":"worker-1","evento":"consulta","campos":{"chave":"00fc5d0c","consulta":"MemAvailable maiores swap"}}
+{"seq":430,"t":1.55013,"thr":"worker-0","evento":"cache","campos":{"chave":"d19c5516","estado":"erro","tempo_s":0.026776}}
+{"seq":431,"t":1.550173,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"d19c5516","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006666654999889943}}
+{"seq":432,"t":1.550194,"thr":"worker-0","evento":"geracao","campos":{"chave":"d19c5516","tempo_s":0.020081321999896318}}
+{"seq":433,"t":1.550249,"thr":"worker-0","evento":"consulta","campos":{"chave":"5d212f6b","consulta":"MemFree pagina\u00e7\u00e3o diferen\u00e7a"}}
+{"seq":434,"t":1.564593,"thr":"worker-1","evento":"cache","campos":{"chave":"00fc5d0c","estado":"erro","tempo_s":0.026475}}
+{"seq":435,"t":1.56464,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"00fc5d0c","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006361486000059813}}
+{"seq":436,"t":1.56466,"thr":"worker-1","evento":"geracao","campos":{"chave":"00fc5d0c","tempo_s":0.020086080999817568}}
+{"seq":437,"t":1.564717,"thr":"worker-1","evento":"consulta","campos":{"chave":"9586b15e","consulta":"p\u00e1ginas corrida virtual"}}
+{"seq":438,"t":1.576572,"thr":"worker-0","evento":"cache","campos":{"chave":"5d212f6b","estado":"erro","tempo_s":0.026268}}
+{"seq":439,"t":1.576615,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"5d212f6b","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.0061556040000141365}}
+{"seq":440,"t":1.576631,"thr":"worker-0","evento":"geracao","campos":{"chave":"5d212f6b","tempo_s":0.020084368000198083}}
+{"seq":441,"t":1.576686,"thr":"worker-0","evento":"consulta","campos":{"chave":"088ff487","consulta":"swap MemFree diferen\u00e7a"}}
+{"seq":442,"t":1.591021,"thr":"worker-1","evento":"cache","campos":{"chave":"9586b15e","estado":"erro","tempo_s":0.026249}}
+{"seq":443,"t":1.591072,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"9586b15e","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006131808999953137}}
+{"seq":444,"t":1.591088,"thr":"worker-1","evento":"geracao","campos":{"chave":"9586b15e","tempo_s":0.020090159000119456}}
+{"seq":445,"t":1.591143,"thr":"worker-1","evento":"consulta","campos":{"chave":"87a04188","consulta":"consumidores p\u00e1ginas starvation"}}
+{"seq":446,"t":1.603226,"thr":"worker-0","evento":"cache","campos":{"chave":"088ff487","estado":"erro","tempo_s":0.026488}}
+{"seq":447,"t":1.603265,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"088ff487","n_trechos":5,"bytes_contexto":8192,"tempo_s":0.006382404999840219}}
+{"seq":448,"t":1.60328,"thr":"worker-0","evento":"geracao","campos":{"chave":"088ff487","tempo_s":0.020080059999827427}}
+{"seq":449,"t":1.60333,"thr":"worker-0","evento":"consulta","campos":{"chave":"11c012aa","consulta":"thrashing virtual diferen\u00e7a"}}
+{"seq":450,"t":1.617419,"thr":"worker-1","evento":"cache","campos":{"chave":"87a04188","estado":"erro","tempo_s":0.026223}}
+{"seq":451,"t":1.617464,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"87a04188","n_trechos":5,"bytes_contexto":8192,"tempo_s":0.006109766999998101}}
+{"seq":452,"t":1.617479,"thr":"worker-1","evento":"geracao","campos":{"chave":"87a04188","tempo_s":0.020085581000103048}}
+{"seq":453,"t":1.617535,"thr":"worker-1","evento":"consulta","campos":{"chave":"d1f78273","consulta":"menores leitura MemFree"}}
+{"seq":454,"t":1.629736,"thr":"worker-0","evento":"cache","campos":{"chave":"11c012aa","estado":"erro","tempo_s":0.026352}}
+{"seq":455,"t":1.62978,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"11c012aa","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006236307000108354}}
+{"seq":456,"t":1.629808,"thr":"worker-0","evento":"geracao","campos":{"chave":"11c012aa","tempo_s":0.020087463999971078}}
+{"seq":457,"t":1.629884,"thr":"worker-0","evento":"consulta","campos":{"chave":"bd087fb0","consulta":"mem\u00f3ria deadlock condi\u00e7\u00e3o"}}
+{"seq":458,"t":1.64426,"thr":"worker-1","evento":"cache","campos":{"chave":"d1f78273","estado":"erro","tempo_s":0.026672}}
+{"seq":459,"t":1.644303,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"d1f78273","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.0065584100000251055}}
+{"seq":460,"t":1.644319,"thr":"worker-1","evento":"geracao","campos":{"chave":"d1f78273","tempo_s":0.020084979999865027}}
+{"seq":461,"t":1.644375,"thr":"worker-1","evento":"consulta","campos":{"chave":"308b4abd","consulta":"com corrida mem\u00f3ria"}}
+{"seq":462,"t":1.656362,"thr":"worker-0","evento":"cache","campos":{"chave":"bd087fb0","estado":"erro","tempo_s":0.026399}}
+{"seq":463,"t":1.656405,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"bd087fb0","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006284917999892059}}
+{"seq":464,"t":1.65642,"thr":"worker-0","evento":"geracao","campos":{"chave":"bd087fb0","tempo_s":0.02008448999981738}}
+{"seq":465,"t":1.656475,"thr":"worker-0","evento":"consulta","campos":{"chave":"27336493","consulta":"starvation MemFree mem\u00f3ria"}}
+{"seq":466,"t":1.671579,"thr":"worker-1","evento":"cache","campos":{"chave":"308b4abd","estado":"erro","tempo_s":0.027149}}
+{"seq":467,"t":1.671622,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"308b4abd","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.007031629000039175}}
+{"seq":468,"t":1.671637,"thr":"worker-1","evento":"geracao","campos":{"chave":"308b4abd","tempo_s":0.0200893679998444}}
+{"seq":469,"t":1.671691,"thr":"worker-1","evento":"consulta","campos":{"chave":"0a036c48","consulta":"mem\u00f3ria corrida kernel"}}
+{"seq":470,"t":1.68278,"thr":"worker-0","evento":"cache","campos":{"chave":"27336493","estado":"erro","tempo_s":0.026253}}
+{"seq":471,"t":1.682823,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"27336493","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006136247000085859}}
+{"seq":472,"t":1.682838,"thr":"worker-0","evento":"geracao","campos":{"chave":"27336493","tempo_s":0.02009011899986035}}
+{"seq":473,"t":1.682891,"thr":"worker-0","evento":"consulta","campos":{"chave":"7aed127d","consulta":"swap mem\u00f3ria faltas"}}
+{"seq":474,"t":1.698136,"thr":"worker-1","evento":"cache","campos":{"chave":"0a036c48","estado":"erro","tempo_s":0.026391}}
+{"seq":475,"t":1.698178,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"0a036c48","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.00627765600006569}}
+{"seq":476,"t":1.698193,"thr":"worker-1","evento":"geracao","campos":{"chave":"0a036c48","tempo_s":0.020086881999986872}}
+{"seq":477,"t":1.698249,"thr":"worker-1","evento":"consulta","campos":{"chave":"da8950f1","consulta":"entre diferen\u00e7a leitura"}}
+{"seq":478,"t":1.709382,"thr":"worker-0","evento":"cache","campos":{"chave":"7aed127d","estado":"erro","tempo_s":0.026439}}
+{"seq":479,"t":1.709424,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"7aed127d","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006331639000109135}}
+{"seq":480,"t":1.709439,"thr":"worker-0","evento":"geracao","campos":{"chave":"7aed127d","tempo_s":0.020082164000086777}}
+{"seq":481,"t":1.709493,"thr":"worker-0","evento":"consulta","campos":{"chave":"af92b461","consulta":"starvation produtores m\u00fatua"}}
+{"seq":482,"t":1.724816,"thr":"worker-1","evento":"cache","campos":{"chave":"da8950f1","estado":"erro","tempo_s":0.026497}}
+{"seq":483,"t":1.724861,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"da8950f1","n_trechos":5,"bytes_contexto":8192,"tempo_s":0.0063820949999353616}}
+{"seq":484,"t":1.724877,"thr":"worker-1","evento":"geracao","campos":{"chave":"da8950f1","tempo_s":0.020083075999991706}}
+{"seq":485,"t":1.72493,"thr":"worker-1","evento":"consulta","campos":{"chave":"0e6750e3","consulta":"menores starvation entre"}}
+{"seq":486,"t":1.735937,"thr":"worker-0","evento":"cache","campos":{"chave":"af92b461","estado":"erro","tempo_s":0.026391}}
+{"seq":487,"t":1.735988,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"af92b461","n_trechos":5,"bytes_contexto":8192,"tempo_s":0.006283397000061086}}
+{"seq":488,"t":1.736003,"thr":"worker-0","evento":"geracao","campos":{"chave":"af92b461","tempo_s":0.02008117300010781}}
+{"seq":489,"t":1.736054,"thr":"worker-0","evento":"consulta","campos":{"chave":"8a0935d3","consulta":"entre corrida e"}}
+{"seq":490,"t":1.751372,"thr":"worker-1","evento":"cache","campos":{"chave":"0e6750e3","estado":"erro","tempo_s":0.02639}}
+{"seq":491,"t":1.751415,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"0e6750e3","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006271152999943297}}
+{"seq":492,"t":1.751429,"thr":"worker-1","evento":"geracao","campos":{"chave":"0e6750e3","tempo_s":0.020091201000013825}}
+{"seq":493,"t":1.751482,"thr":"worker-1","evento":"consulta","campos":{"chave":"1c4d8484","consulta":"consumidores corrida starvation"}}
+{"seq":494,"t":1.762439,"thr":"worker-0","evento":"cache","campos":{"chave":"8a0935d3","estado":"erro","tempo_s":0.026333}}
+{"seq":495,"t":1.762479,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"8a0935d3","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006216900000026726}}
+{"seq":496,"t":1.762495,"thr":"worker-0","evento":"geracao","campos":{"chave":"8a0935d3","tempo_s":0.020088446000045224}}
+{"seq":497,"t":1.762548,"thr":"worker-0","evento":"consulta","campos":{"chave":"a4ff1614","consulta":"mutex swap exclus\u00e3o"}}
+{"seq":498,"t":1.777939,"thr":"worker-1","evento":"cache","campos":{"chave":"1c4d8484","estado":"erro","tempo_s":0.026403}}
+{"seq":499,"t":1.777981,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"1c4d8484","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.00628213400000277}}
+{"seq":500,"t":1.777996,"thr":"worker-1","evento":"geracao","campos":{"chave":"1c4d8484","tempo_s":0.020093284999802563}}
+{"seq":501,"t":1.778049,"thr":"worker-1","evento":"consulta","campos":{"chave":"ee73186f","consulta":"p\u00e1gina condi\u00e7\u00e3o do"}}
+{"seq":502,"t":1.788858,"thr":"worker-0","evento":"cache","campos":{"chave":"a4ff1614","estado":"erro","tempo_s":0.026256}}
+{"seq":503,"t":1.788913,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"a4ff1614","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006147680000140099}}
+{"seq":504,"t":1.788937,"thr":"worker-0","evento":"geracao","campos":{"chave":"a4ff1614","tempo_s":0.02008122100005494}}
+{"seq":505,"t":1.789,"thr":"worker-0","evento":"consulta","campos":{"chave":"f433bb13","consulta":"com virtual mutex"}}
+{"seq":506,"t":1.804424,"thr":"worker-1","evento":"cache","campos":{"chave":"ee73186f","estado":"erro","tempo_s":0.026323}}
+{"seq":507,"t":1.804467,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"ee73186f","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006212852999851748}}
+{"seq":508,"t":1.804483,"thr":"worker-1","evento":"geracao","campos":{"chave":"ee73186f","tempo_s":0.02008158200010257}}
+{"seq":509,"t":1.804539,"thr":"worker-1","evento":"consulta","campos":{"chave":"c5bf890d","consulta":"mutex com p\u00e1ginas"}}
+{"seq":510,"t":1.817784,"thr":"worker-0","evento":"cache","campos":{"chave":"f433bb13","estado":"erro","tempo_s":0.028731}}
+{"seq":511,"t":1.817826,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"f433bb13","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.00861437899993689}}
+{"seq":512,"t":1.817847,"thr":"worker-0","evento":"geracao","campos":{"chave":"f433bb13","tempo_s":0.020086642000023858}}
+{"seq":513,"t":1.8179,"thr":"worker-0","evento":"consulta","campos":{"chave":"98dce65b","consulta":"kernel MemAvailable do"}}
+{"seq":514,"t":1.831091,"thr":"worker-1","evento":"cache","campos":{"chave":"c5bf890d","estado":"erro","tempo_s":0.026491}}
+{"seq":515,"t":1.831143,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"c5bf890d","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.0063658139999915875}}
+{"seq":516,"t":1.831158,"thr":"worker-1","evento":"geracao","campos":{"chave":"c5bf890d","tempo_s":0.020094186999813246}}
+{"seq":517,"t":1.831227,"thr":"worker-1","evento":"consulta","campos":{"chave":"d8bf5776","consulta":"e thrashing swap"}}
+{"seq":518,"t":1.844773,"thr":"worker-0","evento":"cache","campos":{"chave":"98dce65b","estado":"erro","tempo_s":0.026796}}
+{"seq":519,"t":1.844824,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"98dce65b","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006669420999969589}}
+{"seq":520,"t":1.844839,"thr":"worker-0","evento":"geracao","campos":{"chave":"98dce65b","tempo_s":0.020092082000019218}}
+{"seq":521,"t":1.844897,"thr":"worker-0","evento":"consulta","campos":{"chave":"e88323bd","consulta":"swap diferen\u00e7a MemAvailable"}}
+{"seq":522,"t":1.858283,"thr":"worker-1","evento":"cache","campos":{"chave":"d8bf5776","estado":"erro","tempo_s":0.027001}}
+{"seq":523,"t":1.858331,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"d8bf5776","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006880372000068746}}
+{"seq":524,"t":1.858351,"thr":"worker-1","evento":"geracao","campos":{"chave":"d8bf5776","tempo_s":0.02008978899993963}}
+{"seq":525,"t":1.858408,"thr":"worker-1","evento":"consulta","campos":{"chave":"46bab7b5","consulta":"kernel produtores maiores"}}
+{"seq":526,"t":1.871319,"thr":"worker-0","evento":"cache","campos":{"chave":"e88323bd","estado":"erro","tempo_s":0.026364}}
+{"seq":527,"t":1.871365,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"e88323bd","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006244734000119934}}
+{"seq":528,"t":1.871381,"thr":"worker-0","evento":"geracao","campos":{"chave":"e88323bd","tempo_s":0.020089448000135235}}
+{"seq":529,"t":1.87144,"thr":"worker-0","evento":"consulta","campos":{"chave":"a72c2a36","consulta":"do p\u00e1gina mem\u00f3ria"}}
+{"seq":530,"t":1.884642,"thr":"worker-1","evento":"cache","campos":{"chave":"46bab7b5","estado":"erro","tempo_s":0.026179}}
+{"seq":531,"t":1.884687,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"46bab7b5","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006058911000081935}}
+{"seq":532,"t":1.884702,"thr":"worker-1","evento":"geracao","campos":{"chave":"46bab7b5","tempo_s":0.020090460000119492}}
+{"seq":533,"t":1.884757,"thr":"worker-1","evento":"consulta","campos":{"chave":"4164f2c8","consulta":"MemFree cache condi\u00e7\u00e3o"}}
+{"seq":534,"t":1.897813,"thr":"worker-0","evento":"cache","campos":{"chave":"a72c2a36","estado":"erro","tempo_s":0.026318}}
+{"seq":535,"t":1.897871,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"a72c2a36","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006205398000020068}}
+{"seq":536,"t":1.897887,"thr":"worker-0","evento":"geracao","campos":{"chave":"a72c2a36","tempo_s":0.020083757000065816}}
+{"seq":537,"t":1.897944,"thr":"worker-0","evento":"consulta","campos":{"chave":"17bf763c","consulta":"exclus\u00e3o corrida deadlock"}}
+{"seq":538,"t":1.912217,"thr":"worker-1","evento":"cache","campos":{"chave":"4164f2c8","estado":"erro","tempo_s":0.027405}}
+{"seq":539,"t":1.912267,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"4164f2c8","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006187864999901649}}
+{"seq":540,"t":1.912284,"thr":"worker-1","evento":"geracao","campos":{"chave":"4164f2c8","tempo_s":0.021188838000171017}}
+{"seq":541,"t":1.91234,"thr":"worker-1","evento":"consulta","campos":{"chave":"6b314817","consulta":"corrida deadlock produtores"}}
+{"seq":542,"t":1.924286,"thr":"worker-0","evento":"cache","campos":{"chave":"17bf763c","estado":"erro","tempo_s":0.026287}}
+{"seq":543,"t":1.924335,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"17bf763c","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006168297999920469}}
+{"seq":544,"t":1.924351,"thr":"worker-0","evento":"geracao","campos":{"chave":"17bf763c","tempo_s":0.020088406000013492}}
+{"seq":545,"t":1.924406,"thr":"worker-0","evento":"consulta","campos":{"chave":"bae255f9","consulta":"entre thrashing maiores"}}
+{"seq":546,"t":1.939078,"thr":"worker-1","evento":"cache","campos":{"chave":"6b314817","estado":"erro","tempo_s":0.026682}}
+{"seq":547,"t":1.939123,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"6b314817","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006561355000030744}}
+{"seq":548,"t":1.939154,"thr":"worker-1","evento":"geracao","campos":{"chave":"6b314817","tempo_s":0.02009079999993446}}
+{"seq":549,"t":1.939226,"thr":"worker-1","evento":"consulta","campos":{"chave":"1190bf02","consulta":"p\u00e1ginas deadlock e"}}
+{"seq":550,"t":1.950765,"thr":"worker-0","evento":"cache","campos":{"chave":"bae255f9","estado":"erro","tempo_s":0.026305}}
+{"seq":551,"t":1.950808,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"bae255f9","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006198025000003327}}
+{"seq":552,"t":1.950826,"thr":"worker-0","evento":"geracao","campos":{"chave":"bae255f9","tempo_s":0.020077965000155018}}
+{"seq":553,"t":1.950878,"thr":"worker-0","evento":"consulta","campos":{"chave":"a330ae7c","consulta":"p\u00e1ginas mutex maiores"}}
+{"seq":554,"t":1.965676,"thr":"worker-1","evento":"cache","campos":{"chave":"1190bf02","estado":"erro","tempo_s":0.026387}}
+{"seq":555,"t":1.965719,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"1190bf02","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006270603000075425}}
+{"seq":556,"t":1.965735,"thr":"worker-1","evento":"geracao","campos":{"chave":"1190bf02","tempo_s":0.020088714999928925}}
+{"seq":557,"t":1.965788,"thr":"worker-1","evento":"consulta","campos":{"chave":"11dc9b80","consulta":"de starvation virtual"}}
+{"seq":558,"t":1.977181,"thr":"worker-0","evento":"cache","campos":{"chave":"a330ae7c","estado":"erro","tempo_s":0.026243}}
+{"seq":559,"t":1.977232,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"a330ae7c","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.00611710199996196}}
+{"seq":560,"t":1.977248,"thr":"worker-0","evento":"geracao","campos":{"chave":"a330ae7c","tempo_s":0.020090428999992582}}
+{"seq":561,"t":1.977309,"thr":"worker-0","evento":"consulta","campos":{"chave":"a981f60a","consulta":"de cache pagina\u00e7\u00e3o"}}
+{"seq":562,"t":1.993978,"thr":"worker-1","evento":"cache","campos":{"chave":"11dc9b80","estado":"erro","tempo_s":0.028135}}
+{"seq":563,"t":1.994029,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"11dc9b80","n_trechos":5,"bytes_contexto":8192,"tempo_s":0.008016261999955532}}
+{"seq":564,"t":1.994044,"thr":"worker-1","evento":"geracao","campos":{"chave":"11dc9b80","tempo_s":0.020086402000060843}}
+{"seq":565,"t":1.994104,"thr":"worker-1","evento":"consulta","campos":{"chave":"af625913","consulta":"m\u00fatua swap kernel"}}
+{"seq":566,"t":2.00379,"thr":"worker-0","evento":"cache","campos":{"chave":"a981f60a","estado":"erro","tempo_s":0.02642}}
+{"seq":567,"t":2.003839,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"a981f60a","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006297041999914654}}
+{"seq":568,"t":2.003856,"thr":"worker-0","evento":"geracao","campos":{"chave":"a981f60a","tempo_s":0.020091290999971534}}
+{"seq":569,"t":2.003912,"thr":"worker-0","evento":"consulta","campos":{"chave":"bb34f14a","consulta":"consumidores thrashing maiores"}}
+{"seq":570,"t":2.020629,"thr":"worker-1","evento":"cache","campos":{"chave":"af625913","estado":"erro","tempo_s":0.02647}}
+{"seq":571,"t":2.020671,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"af625913","n_trechos":5,"bytes_contexto":8192,"tempo_s":0.006352447999915967}}
+{"seq":572,"t":2.020686,"thr":"worker-1","evento":"geracao","campos":{"chave":"af625913","tempo_s":0.020087573999944652}}
+{"seq":573,"t":2.020738,"thr":"worker-1","evento":"consulta","campos":{"chave":"7760a2a9","consulta":"produtores com do"}}
+{"seq":574,"t":2.030339,"thr":"worker-0","evento":"cache","campos":{"chave":"bb34f14a","estado":"erro","tempo_s":0.026372}}
+{"seq":575,"t":2.030383,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"bb34f14a","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006248891000041112}}
+{"seq":576,"t":2.030399,"thr":"worker-0","evento":"geracao","campos":{"chave":"bb34f14a","tempo_s":0.02009499800010417}}
+{"seq":577,"t":2.030451,"thr":"worker-0","evento":"consulta","campos":{"chave":"d81c5d95","consulta":"do menores leitura"}}
+{"seq":578,"t":2.047247,"thr":"worker-1","evento":"cache","campos":{"chave":"7760a2a9","estado":"erro","tempo_s":0.026455}}
+{"seq":579,"t":2.047291,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"7760a2a9","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006343952000179343}}
+{"seq":580,"t":2.047306,"thr":"worker-1","evento":"geracao","campos":{"chave":"7760a2a9","tempo_s":0.020083165999949415}}
+{"seq":581,"t":2.047362,"thr":"worker-1","evento":"consulta","campos":{"chave":"860ce302","consulta":"entre starvation p\u00e1gina"}}
+{"seq":582,"t":2.056759,"thr":"worker-0","evento":"cache","campos":{"chave":"d81c5d95","estado":"erro","tempo_s":0.026244}}
+{"seq":583,"t":2.056802,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"d81c5d95","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006132630999900357}}
+{"seq":584,"t":2.056817,"thr":"worker-0","evento":"geracao","campos":{"chave":"d81c5d95","tempo_s":0.020082455000192567}}
+{"seq":585,"t":2.05687,"thr":"worker-0","evento":"consulta","campos":{"chave":"da82eded","consulta":"do com diferen\u00e7a"}}
+{"seq":586,"t":2.073986,"thr":"worker-1","evento":"cache","campos":{"chave":"860ce302","estado":"erro","tempo_s":0.026554}}
+{"seq":587,"t":2.074027,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"860ce302","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.0064344039999468805}}
+{"seq":588,"t":2.074048,"thr":"worker-1","evento":"geracao","campos":{"chave":"860ce302","tempo_s":0.02008940799987613}}
+{"seq":589,"t":2.074103,"thr":"worker-1","evento":"consulta","campos":{"chave":"cfe2d1eb","consulta":"com menores mem\u00f3ria"}}
+{"seq":590,"t":2.083206,"thr":"worker-0","evento":"cache","campos":{"chave":"da82eded","estado":"erro","tempo_s":0.026281}}
+{"seq":591,"t":2.083246,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"da82eded","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006147929999997359}}
+{"seq":592,"t":2.083261,"thr":"worker-0","evento":"geracao","campos":{"chave":"da82eded","tempo_s":0.0200898479999978}}
+{"seq":593,"t":2.083314,"thr":"worker-0","evento":"consulta","campos":{"chave":"4a035402","consulta":"menores produtores virtual"}}
+{"seq":594,"t":2.1004,"thr":"worker-1","evento":"cache","campos":{"chave":"cfe2d1eb","estado":"erro","tempo_s":0.026243}}
+{"seq":595,"t":2.100451,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"cfe2d1eb","n_trechos":5,"bytes_contexto":8192,"tempo_s":0.0061330119999638555}}
+{"seq":596,"t":2.100467,"thr":"worker-1","evento":"geracao","campos":{"chave":"cfe2d1eb","tempo_s":0.020081832999949256}}
+{"seq":597,"t":2.100521,"thr":"worker-1","evento":"consulta","campos":{"chave":"40425033","consulta":"cache mem\u00f3ria maiores"}}
+{"seq":598,"t":2.109747,"thr":"worker-0","evento":"cache","campos":{"chave":"4a035402","estado":"erro","tempo_s":0.02638}}
+{"seq":599,"t":2.10979,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"4a035402","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.0062557339999784745}}
+{"seq":600,"t":2.109805,"thr":"worker-0","evento":"geracao","campos":{"chave":"4a035402","tempo_s":0.02009566900005666}}
+{"seq":601,"t":2.109859,"thr":"worker-0","evento":"consulta","campos":{"chave":"5511ffa0","consulta":"condi\u00e7\u00e3o mem\u00f3ria maiores"}}
+{"seq":602,"t":2.126867,"thr":"worker-1","evento":"cache","campos":{"chave":"40425033","estado":"erro","tempo_s":0.026292}}
+{"seq":603,"t":2.126909,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"40425033","n_trechos":5,"bytes_contexto":8192,"tempo_s":0.006175501999905464}}
+{"seq":604,"t":2.12694,"thr":"worker-1","evento":"geracao","campos":{"chave":"40425033","tempo_s":0.020087534000140295}}
+{"seq":605,"t":2.127,"thr":"worker-1","evento":"consulta","campos":{"chave":"87ca7a06","consulta":"virtual deadlock e"}}
+{"seq":606,"t":2.136178,"thr":"worker-0","evento":"cache","campos":{"chave":"5511ffa0","estado":"erro","tempo_s":0.026264}}
+{"seq":607,"t":2.136222,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"5511ffa0","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006192624000050273}}
+{"seq":608,"t":2.136247,"thr":"worker-0","evento":"geracao","campos":{"chave":"5511ffa0","tempo_s":0.02004210800009787}}
+{"seq":609,"t":2.136304,"thr":"worker-0","evento":"consulta","campos":{"chave":"d8db2ae5","consulta":"MemFree exclus\u00e3o cache"}}
+{"seq":610,"t":2.153417,"thr":"worker-1","evento":"cache","campos":{"chave":"87ca7a06","estado":"erro","tempo_s":0.026362}}
+{"seq":611,"t":2.15346,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"87ca7a06","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006242900999950507}}
+{"seq":612,"t":2.153475,"thr":"worker-1","evento":"geracao","campos":{"chave":"87ca7a06","tempo_s":0.020090189000029568}}
+{"seq":613,"t":2.15352,"thr":"worker-1","evento":"consulta","campos":{"chave":"ce90d1f8","consulta":"maiores thrashing com"}}
+{"seq":614,"t":2.162564,"thr":"worker-0","evento":"cache","campos":{"chave":"d8db2ae5","estado":"erro","tempo_s":0.026206}}
+{"seq":615,"t":2.162607,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"d8db2ae5","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006086322999863114}}
+{"seq":616,"t":2.162622,"thr":"worker-0","evento":"geracao","campos":{"chave":"d8db2ae5","tempo_s":0.020090710999966177}}
+{"seq":617,"t":2.162677,"thr":"worker-0","evento":"consulta","campos":{"chave":"4593fdd6","consulta":"condi\u00e7\u00e3o p\u00e1ginas do"}}
+{"seq":618,"t":2.179958,"thr":"worker-1","evento":"cache","campos":{"chave":"ce90d1f8","estado":"erro","tempo_s":0.026399}}
+{"seq":619,"t":2.180006,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"ce90d1f8","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006282184999918172}}
+{"seq":620,"t":2.180028,"thr":"worker-1","evento":"geracao","campos":{"chave":"ce90d1f8","tempo_s":0.02008833600007165}}
+{"seq":621,"t":2.180087,"thr":"worker-1","evento":"consulta","campos":{"chave":"2dc40a76","consulta":"com p\u00e1gina MemFree"}}
+{"seq":622,"t":2.188958,"thr":"worker-0","evento":"cache","campos":{"chave":"4593fdd6","estado":"erro","tempo_s":0.026224}}
+{"seq":623,"t":2.189006,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"4593fdd6","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006108353999934479}}
+{"seq":624,"t":2.189022,"thr":"worker-0","evento":"geracao","campos":{"chave":"4593fdd6","tempo_s":0.020085539000092467}}
+{"seq":625,"t":2.18908,"thr":"worker-0","evento":"consulta","campos":{"chave":"e1c08f93","consulta":"p\u00e1gina thrashing entre"}}
+{"seq":626,"t":2.207177,"thr":"worker-1","evento":"cache","campos":{"chave":"2dc40a76","estado":"erro","tempo_s":0.027017}}
+{"seq":627,"t":2.207244,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"2dc40a76","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006893697000123211}}
+{"seq":628,"t":2.207261,"thr":"worker-1","evento":"geracao","campos":{"chave":"2dc40a76","tempo_s":0.02008515899979102}}
+{"seq":629,"t":2.207319,"thr":"worker-1","evento":"consulta","campos":{"chave":"73f0ac4f","consulta":"menores mutex MemAvailable"}}
+{"seq":630,"t":2.217285,"thr":"worker-0","evento":"cache","campos":{"chave":"e1c08f93","estado":"erro","tempo_s":0.028149}}
+{"seq":631,"t":2.217334,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"e1c08f93","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.008036781000100746}}
+{"seq":632,"t":2.21735,"thr":"worker-0","evento":"geracao","campos":{"chave":"e1c08f93","tempo_s":0.020080259999986083}}
+{"seq":633,"t":2.217408,"thr":"worker-0","evento":"consulta","campos":{"chave":"ee7b7c50","consulta":"de mem\u00f3ria cache"}}
+{"seq":634,"t":2.234315,"thr":"worker-1","evento":"cache","campos":{"chave":"73f0ac4f","estado":"erro","tempo_s":0.026934}}
+{"seq":635,"t":2.234368,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"73f0ac4f","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006806120999954146}}
+{"seq":636,"t":2.234385,"thr":"worker-1","evento":"geracao","campos":{"chave":"73f0ac4f","tempo_s":0.020089787999950204}}
+{"seq":637,"t":2.234446,"thr":"worker-1","evento":"consulta","campos":{"chave":"c21d8d5f","consulta":"p\u00e1ginas swap p\u00e1gina"}}
+{"seq":638,"t":2.245265,"thr":"worker-0","evento":"cache","campos":{"chave":"ee7b7c50","estado":"erro","tempo_s":0.027798}}
+{"seq":639,"t":2.245328,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"ee7b7c50","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.007698117000018101}}
+{"seq":640,"t":2.245345,"thr":"worker-0","evento":"geracao","campos":{"chave":"ee7b7c50","tempo_s":0.020064248999915435}}
+{"seq":641,"t":2.245406,"thr":"worker-0","evento":"consulta","campos":{"chave":"91d54d01","consulta":"swap diferen\u00e7a mem\u00f3ria"}}
+{"seq":642,"t":2.262771,"thr":"worker-1","evento":"cache","campos":{"chave":"c21d8d5f","estado":"erro","tempo_s":0.028267}}
+{"seq":643,"t":2.262835,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"c21d8d5f","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.008106975000146122}}
+{"seq":644,"t":2.262863,"thr":"worker-1","evento":"geracao","campos":{"chave":"c21d8d5f","tempo_s":0.020096911000109685}}
+{"seq":645,"t":2.262928,"thr":"worker-1","evento":"consulta","campos":{"chave":"54f0f00f","consulta":"p\u00e1gina mem\u00f3ria exclus\u00e3o"}}
+{"seq":646,"t":2.274429,"thr":"worker-0","evento":"cache","campos":{"chave":"91d54d01","estado":"erro","tempo_s":0.028964}}
+{"seq":647,"t":2.274482,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"91d54d01","n_trechos":5,"bytes_contexto":8192,"tempo_s":0.00883140199994159}}
+{"seq":648,"t":2.274498,"thr":"worker-0","evento":"geracao","campos":{"chave":"91d54d01","tempo_s":0.02009811500010983}}
+{"seq":649,"t":2.274554,"thr":"worker-0","evento":"consulta","campos":{"chave":"5b98d7d7","consulta":"faltas swap deadlock"}}
+{"seq":650,"t":2.289886,"thr":"worker-1","evento":"cache","campos":{"chave":"54f0f00f","estado":"erro","tempo_s":0.026902}}
+{"seq":651,"t":2.289928,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"54f0f00f","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006782437000083519}}
+{"seq":652,"t":2.289943,"thr":"worker-1","evento":"geracao","campos":{"chave":"54f0f00f","tempo_s":0.020089697999992495}}
+{"seq":653,"t":2.289995,"thr":"worker-1","evento":"consulta","campos":{"chave":"41f0539a","consulta":"consumidores mutex de"}}
+{"seq":654,"t":2.300967,"thr":"worker-0","evento":"cache","campos":{"chave":"5b98d7d7","estado":"erro","tempo_s":0.026355}}
+{"seq":655,"t":2.301015,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"5b98d7d7","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006244973999855574}}
+{"seq":656,"t":2.301031,"thr":"worker-0","evento":"geracao","campos":{"chave":"5b98d7d7","tempo_s":0.02008085200009191}}
+{"seq":657,"t":2.30109,"thr":"worker-0","evento":"consulta","campos":{"chave":"f8eed0f9","consulta":"p\u00e1ginas diferen\u00e7a MemAvailable"}}
+{"seq":658,"t":2.316302,"thr":"worker-1","evento":"cache","campos":{"chave":"41f0539a","estado":"erro","tempo_s":0.026251}}
+{"seq":659,"t":2.316356,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"41f0539a","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006138942000006864}}
+{"seq":660,"t":2.316372,"thr":"worker-1","evento":"geracao","campos":{"chave":"41f0539a","tempo_s":0.02008290499998111}}
+{"seq":661,"t":2.31643,"thr":"worker-1","evento":"consulta","campos":{"chave":"f737f047","consulta":"com exclus\u00e3o thrashing"}}
+{"seq":662,"t":2.327399,"thr":"worker-0","evento":"cache","campos":{"chave":"f8eed0f9","estado":"erro","tempo_s":0.026255}}
+{"seq":663,"t":2.327442,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"f8eed0f9","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.0061382310000226425}}
+{"seq":664,"t":2.327458,"thr":"worker-0","evento":"geracao","campos":{"chave":"f8eed0f9","tempo_s":0.020087474000092698}}
+{"seq":665,"t":2.327512,"thr":"worker-0","evento":"consulta","campos":{"chave":"67ecdeca","consulta":"cache exclus\u00e3o com"}}
+{"seq":666,"t":2.3432,"thr":"worker-1","evento":"cache","campos":{"chave":"f737f047","estado":"erro","tempo_s":0.026706}}
+{"seq":667,"t":2.343246,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"f737f047","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006586232000017844}}
+{"seq":668,"t":2.343273,"thr":"worker-1","evento":"geracao","campos":{"chave":"f737f047","tempo_s":0.02009177200011436}}
+{"seq":669,"t":2.34334,"thr":"worker-1","evento":"consulta","campos":{"chave":"ef01f4ad","consulta":"maiores thrashing p\u00e1ginas"}}
+{"seq":670,"t":2.355611,"thr":"worker-0","evento":"cache","campos":{"chave":"67ecdeca","estado":"erro","tempo_s":0.028046}}
+{"seq":671,"t":2.355654,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"67ecdeca","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.00792593999995006}}
+{"seq":672,"t":2.35567,"thr":"worker-0","evento":"geracao","campos":{"chave":"67ecdeca","tempo_s":0.0200920130000668}}
+{"seq":673,"t":2.355723,"thr":"worker-0","evento":"consulta","campos":{"chave":"c39d569f","consulta":"MemFree corrida de"}}
+{"seq":674,"t":2.36965,"thr":"worker-1","evento":"cache","campos":{"chave":"ef01f4ad","estado":"erro","tempo_s":0.026254}}
+{"seq":675,"t":2.369691,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"ef01f4ad","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.00613584699999592}}
+{"seq":676,"t":2.369706,"thr":"worker-1","evento":"geracao","campos":{"chave":"ef01f4ad","tempo_s":0.020088796999971237}}
+{"seq":677,"t":2.36976,"thr":"worker-1","evento":"consulta","campos":{"chave":"ed7014f8","consulta":"m\u00fatua kernel do"}}
+{"seq":678,"t":2.382069,"thr":"worker-0","evento":"cache","campos":{"chave":"c39d569f","estado":"erro","tempo_s":0.026292}}
+{"seq":679,"t":2.382112,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"c39d569f","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006178087000080268}}
+{"seq":680,"t":2.382127,"thr":"worker-0","evento":"geracao","campos":{"chave":"c39d569f","tempo_s":0.020083155000065744}}
+{"seq":681,"t":2.382181,"thr":"worker-0","evento":"consulta","campos":{"chave":"8f9741cd","consulta":"consumidores com faltas"}}
+{"seq":682,"t":2.396168,"thr":"worker-1","evento":"cache","campos":{"chave":"ed7014f8","estado":"erro","tempo_s":0.026354}}
+{"seq":683,"t":2.396211,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"ed7014f8","n_trechos":5,"bytes_contexto":8192,"tempo_s":0.0062613160000637436}}
+{"seq":684,"t":2.396227,"thr":"worker-1","evento":"geracao","campos":{"chave":"ed7014f8","tempo_s":0.020063779000111026}}
+{"seq":685,"t":2.396279,"thr":"worker-1","evento":"consulta","campos":{"chave":"dff9d667","consulta":"do MemFree MemAvailable"}}
+{"seq":686,"t":2.410924,"thr":"worker-0","evento":"cache","campos":{"chave":"8f9741cd","estado":"erro","tempo_s":0.028691}}
+{"seq":687,"t":2.410967,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"8f9741cd","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.008574243999873943}}
+{"seq":688,"t":2.410982,"thr":"worker-0","evento":"geracao","campos":{"chave":"8f9741cd","tempo_s":0.02008847600018271}}
+{"seq":689,"t":2.411036,"thr":"worker-0","evento":"consulta","campos":{"chave":"0bf2267a","consulta":"consumidores pagina\u00e7\u00e3o starvation"}}
+{"seq":690,"t":2.42256,"thr":"worker-1","evento":"cache","campos":{"chave":"dff9d667","estado":"erro","tempo_s":0.026224}}
+{"seq":691,"t":2.422606,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"dff9d667","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006103845999859914}}
+{"seq":692,"t":2.422622,"thr":"worker-1","evento":"geracao","campos":{"chave":"dff9d667","tempo_s":0.020089517000087653}}
+{"seq":693,"t":2.422678,"thr":"worker-1","evento":"consulta","campos":{"chave":"e367f8d1","consulta":"diferen\u00e7a pagina\u00e7\u00e3o menores"}}
+{"seq":694,"t":2.437403,"thr":"worker-0","evento":"cache","campos":{"chave":"0bf2267a","estado":"erro","tempo_s":0.026312}}
+{"seq":695,"t":2.437448,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"0bf2267a","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006188076999933401}}
+{"seq":696,"t":2.437465,"thr":"worker-0","evento":"geracao","campos":{"chave":"0bf2267a","tempo_s":0.020093464999945354}}
+{"seq":697,"t":2.437521,"thr":"worker-0","evento":"consulta","campos":{"chave":"cfe2ccdc","consulta":"virtual entre p\u00e1gina"}}
+{"seq":698,"t":2.448999,"thr":"worker-1","evento":"cache","campos":{"chave":"e367f8d1","estado":"erro","tempo_s":0.026266}}
+{"seq":699,"t":2.449051,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"e367f8d1","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006147437999970862}}
+{"seq":700,"t":2.449067,"thr":"worker-1","evento":"geracao","campos":{"chave":"e367f8d1","tempo_s":0.02009014999998726}}
+{"seq":701,"t":2.44912,"thr":"worker-1","evento":"consulta","campos":{"chave":"902615cb","consulta":"do entre cache"}}
+{"seq":702,"t":2.463925,"thr":"worker-0","evento":"cache","campos":{"chave":"cfe2ccdc","estado":"erro","tempo_s":0.026342}}
+{"seq":703,"t":2.463966,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"cfe2ccdc","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.00622303200020724}}
+{"seq":704,"t":2.463981,"thr":"worker-0","evento":"geracao","campos":{"chave":"cfe2ccdc","tempo_s":0.020089799000061248}}
+{"seq":705,"t":2.464033,"thr":"worker-0","evento":"consulta","campos":{"chave":"db7eeb75","consulta":"diferen\u00e7a maiores deadlock"}}
+{"seq":706,"t":2.475431,"thr":"worker-1","evento":"cache","campos":{"chave":"902615cb","estado":"erro","tempo_s":0.026259}}
+{"seq":707,"t":2.475473,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"902615cb","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006148559999928693}}
+{"seq":708,"t":2.475487,"thr":"worker-1","evento":"geracao","campos":{"chave":"902615cb","tempo_s":0.020083537000118667}}
+{"seq":709,"t":2.475537,"thr":"worker-1","evento":"consulta","campos":{"chave":"7dabc832","consulta":"menores faltas com"}}
+{"seq":710,"t":2.49043,"thr":"worker-0","evento":"cache","campos":{"chave":"db7eeb75","estado":"erro","tempo_s":0.026343}}
+{"seq":711,"t":2.490474,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"db7eeb75","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006225997000001371}}
+{"seq":712,"t":2.490489,"thr":"worker-0","evento":"geracao","campos":{"chave":"db7eeb75","tempo_s":0.02008927700012464}}
+{"seq":713,"t":2.490541,"thr":"worker-0","evento":"consulta","campos":{"chave":"acfdb6a8","consulta":"com corrida mmap"}}
+{"seq":714,"t":2.505455,"thr":"worker-1","evento":"cache","campos":{"chave":"7dabc832","estado":"erro","tempo_s":0.029857}}
+{"seq":715,"t":2.505499,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"7dabc832","n_trechos":5,"bytes_contexto":7168,"tempo_s":0.009739458000012746}}
+{"seq":716,"t":2.505515,"thr":"worker-1","evento":"geracao","campos":{"chave":"7dabc832","tempo_s":0.020088795999981812}}
+{"seq":717,"t":2.505571,"thr":"worker-1","evento":"consulta","campos":{"chave":"19f1a2ec","consulta":"menores produtores swap"}}
+{"seq":718,"t":2.516976,"thr":"worker-0","evento":"cache","campos":{"chave":"acfdb6a8","estado":"erro","tempo_s":0.026384}}
+{"seq":719,"t":2.517017,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"acfdb6a8","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006267297000022154}}
+{"seq":720,"t":2.517032,"thr":"worker-0","evento":"geracao","campos":{"chave":"acfdb6a8","tempo_s":0.020087394000029235}}
+{"seq":721,"t":2.517086,"thr":"worker-0","evento":"consulta","campos":{"chave":"b9f84a0d","consulta":"MemAvailable p\u00e1gina thrashing"}}
+{"seq":722,"t":2.532076,"thr":"worker-1","evento":"cache","campos":{"chave":"19f1a2ec","estado":"erro","tempo_s":0.026451}}
+{"seq":723,"t":2.532133,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"19f1a2ec","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006333903000040664}}
+{"seq":724,"t":2.532154,"thr":"worker-1","evento":"geracao","campos":{"chave":"19f1a2ec","tempo_s":0.02008899699990252}}
+{"seq":725,"t":2.532209,"thr":"worker-1","evento":"consulta","campos":{"chave":"ecb398a6","consulta":"kernel mutex e"}}
+{"seq":726,"t":2.543422,"thr":"worker-0","evento":"cache","campos":{"chave":"b9f84a0d","estado":"erro","tempo_s":0.02628}}
+{"seq":727,"t":2.54347,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"b9f84a0d","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006153510000103779}}
+{"seq":728,"t":2.543485,"thr":"worker-0","evento":"geracao","campos":{"chave":"b9f84a0d","tempo_s":0.020095970000056695}}
+{"seq":729,"t":2.54354,"thr":"worker-0","evento":"consulta","campos":{"chave":"ff9b5836","consulta":"do faltas entre"}}
+{"seq":730,"t":2.55881,"thr":"worker-1","evento":"cache","campos":{"chave":"ecb398a6","estado":"erro","tempo_s":0.026535}}
+{"seq":731,"t":2.55887,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"ecb398a6","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006408835000002}}
+{"seq":732,"t":2.558889,"thr":"worker-1","evento":"geracao","campos":{"chave":"ecb398a6","tempo_s":0.02008980799996607}}
+{"seq":733,"t":2.558952,"thr":"worker-1","evento":"consulta","campos":{"chave":"0fe891d1","consulta":"corrida diferen\u00e7a de"}}
+{"seq":734,"t":2.570565,"thr":"worker-0","evento":"cache","campos":{"chave":"ff9b5836","estado":"erro","tempo_s":0.026901}}
+{"seq":735,"t":2.570614,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"ff9b5836","n_trechos":5,"bytes_contexto":8192,"tempo_s":0.006769221000013204}}
+{"seq":736,"t":2.57063,"thr":"worker-0","evento":"geracao","campos":{"chave":"ff9b5836","tempo_s":0.020093454000061683}}
+{"seq":737,"t":2.570685,"thr":"worker-0","evento":"consulta","campos":{"chave":"bd287103","consulta":"cache thrashing do"}}
+{"seq":738,"t":2.585855,"thr":"worker-1","evento":"cache","campos":{"chave":"0fe891d1","estado":"erro","tempo_s":0.026848}}
+{"seq":739,"t":2.585898,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"0fe891d1","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006725347999918085}}
+{"seq":740,"t":2.585913,"thr":"worker-1","evento":"geracao","campos":{"chave":"0fe891d1","tempo_s":0.0200909310001407}}
+{"seq":741,"t":2.585966,"thr":"worker-1","evento":"consulta","campos":{"chave":"782038e3","consulta":"deadlock cache produtores"}}
+{"seq":742,"t":2.597416,"thr":"worker-0","evento":"cache","campos":{"chave":"bd287103","estado":"erro","tempo_s":0.026678}}
+{"seq":743,"t":2.597458,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"bd287103","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006568920000063372}}
+{"seq":744,"t":2.597478,"thr":"worker-0","evento":"geracao","campos":{"chave":"bd287103","tempo_s":0.020080891000134216}}
+{"seq":745,"t":2.597533,"thr":"worker-0","evento":"consulta","campos":{"chave":"a1fba302","consulta":"deadlock corrida p\u00e1gina"}}
+{"seq":746,"t":2.612412,"thr":"worker-1","evento":"cache","campos":{"chave":"782038e3","estado":"erro","tempo_s":0.026391}}
+{"seq":747,"t":2.612461,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"782038e3","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.00627247600004921}}
+{"seq":748,"t":2.612481,"thr":"worker-1","evento":"geracao","campos":{"chave":"782038e3","tempo_s":0.020088425000039933}}
+{"seq":749,"t":2.612541,"thr":"worker-1","evento":"consulta","campos":{"chave":"b1d01f8d","consulta":"mem\u00f3ria mmap do"}}
+{"seq":750,"t":2.623926,"thr":"worker-0","evento":"cache","campos":{"chave":"a1fba302","estado":"erro","tempo_s":0.02634}}
+{"seq":751,"t":2.623968,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"a1fba302","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.00622052799985795}}
+{"seq":752,"t":2.623983,"thr":"worker-0","evento":"geracao","campos":{"chave":"a1fba302","tempo_s":0.020091432000072018}}
+{"seq":753,"t":2.624038,"thr":"worker-0","evento":"consulta","campos":{"chave":"49d348bc","consulta":"maiores starvation m\u00fatua"}}
+{"seq":754,"t":2.63892,"thr":"worker-1","evento":"cache","campos":{"chave":"b1d01f8d","estado":"erro","tempo_s":0.026326}}
+{"seq":755,"t":2.638965,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"b1d01f8d","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.0062033649999193585}}
+{"seq":756,"t":2.638981,"thr":"worker-1","evento":"geracao","campos":{"chave":"b1d01f8d","tempo_s":0.0200934760000564}}
+{"seq":757,"t":2.639037,"thr":"worker-1","evento":"consulta","campos":{"chave":"7b5b82b7","consulta":"virtual diferen\u00e7a MemFree"}}
+{"seq":758,"t":2.650343,"thr":"worker-0","evento":"cache","campos":{"chave":"49d348bc","estado":"erro","tempo_s":0.026252}}
+{"seq":759,"t":2.650386,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"49d348bc","n_trechos":5,"bytes_contexto":8192,"tempo_s":0.006143550999922809}}
+{"seq":760,"t":2.650401,"thr":"worker-0","evento":"geracao","campos":{"chave":"49d348bc","tempo_s":0.02008111200007079}}
+{"seq":761,"t":2.650463,"thr":"worker-0","evento":"consulta","campos":{"chave":"cbc26db5","consulta":"deadlock consumidores maiores"}}
+{"seq":762,"t":2.66552,"thr":"worker-1","evento":"cache","campos":{"chave":"7b5b82b7","estado":"erro","tempo_s":0.0263}}
+{"seq":763,"t":2.665565,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"7b5b82b7","n_trechos":5,"bytes_contexto":8192,"tempo_s":0.006186442999933206}}
+{"seq":764,"t":2.665579,"thr":"worker-1","evento":"geracao","campos":{"chave":"7b5b82b7","tempo_s":0.02008215400019253}}
+{"seq":765,"t":2.665634,"thr":"worker-1","evento":"consulta","campos":{"chave":"e960611c","consulta":"starvation mem\u00f3ria swap"}}
+{"seq":766,"t":2.677189,"thr":"worker-0","evento":"cache","campos":{"chave":"cbc26db5","estado":"erro","tempo_s":0.026673}}
+{"seq":767,"t":2.677231,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"cbc26db5","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006568470000047455}}
+{"seq":768,"t":2.677247,"thr":"worker-0","evento":"geracao","campos":{"chave":"cbc26db5","tempo_s":0.020077685000160272}}
+{"seq":769,"t":2.677303,"thr":"worker-0","evento":"consulta","campos":{"chave":"c4bf0d76","consulta":"e cache p\u00e1ginas"}}
+{"seq":770,"t":2.694149,"thr":"worker-1","evento":"cache","campos":{"chave":"e960611c","estado":"erro","tempo_s":0.028461}}
+{"seq":771,"t":2.694192,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"e960611c","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.008342762999973274}}
+{"seq":772,"t":2.694208,"thr":"worker-1","evento":"geracao","campos":{"chave":"e960611c","tempo_s":0.020090029000130016}}
+{"seq":773,"t":2.694259,"thr":"worker-1","evento":"consulta","campos":{"chave":"5dc77216","consulta":"do com maiores"}}
+{"seq":774,"t":2.703951,"thr":"worker-0","evento":"cache","campos":{"chave":"c4bf0d76","estado":"erro","tempo_s":0.026595}}
+{"seq":775,"t":2.703993,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"c4bf0d76","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006479130000116129}}
+{"seq":776,"t":2.704009,"thr":"worker-0","evento":"geracao","campos":{"chave":"c4bf0d76","tempo_s":0.02008861500007697}}
+{"seq":777,"t":2.704058,"thr":"worker-0","evento":"consulta","campos":{"chave":"ff7f192b","consulta":"faltas cache mmap"}}
+{"seq":778,"t":2.720569,"thr":"worker-1","evento":"cache","campos":{"chave":"5dc77216","estado":"erro","tempo_s":0.026256}}
+{"seq":779,"t":2.720609,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"5dc77216","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.0061461970001346344}}
+{"seq":780,"t":2.720625,"thr":"worker-1","evento":"geracao","campos":{"chave":"5dc77216","tempo_s":0.020083065999870087}}
+{"seq":781,"t":2.720671,"thr":"worker-1","evento":"consulta","campos":{"chave":"30419637","consulta":"virtual de entre"}}
+{"seq":782,"t":2.730469,"thr":"worker-0","evento":"cache","campos":{"chave":"ff7f192b","estado":"erro","tempo_s":0.026254}}
+{"seq":783,"t":2.730511,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"ff7f192b","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006138450999969791}}
+{"seq":784,"t":2.730527,"thr":"worker-0","evento":"geracao","campos":{"chave":"ff7f192b","tempo_s":0.020086361000039687}}
+{"seq":785,"t":2.730576,"thr":"worker-0","evento":"consulta","campos":{"chave":"32d4bcd2","consulta":"do consumidores p\u00e1gina"}}
+{"seq":786,"t":2.746972,"thr":"worker-1","evento":"cache","campos":{"chave":"30419637","estado":"erro","tempo_s":0.026271}}
+{"seq":787,"t":2.747013,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"30419637","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.0061565759999666625}}
+{"seq":788,"t":2.747028,"thr":"worker-1","evento":"geracao","campos":{"chave":"30419637","tempo_s":0.020088536000002932}}
+{"seq":789,"t":2.747066,"thr":"worker-1","evento":"consulta","campos":{"chave":"c6c9d41b","consulta":"thrashing diferen\u00e7a de"}}
+{"seq":790,"t":2.756994,"thr":"worker-0","evento":"cache","campos":{"chave":"32d4bcd2","estado":"erro","tempo_s":0.026386}}
+{"seq":791,"t":2.75712,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"32d4bcd2","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.00627248699993288}}
+{"seq":792,"t":2.757145,"thr":"worker-0","evento":"geracao","campos":{"chave":"32d4bcd2","tempo_s":0.020086371999923358}}
+{"seq":793,"t":2.757186,"thr":"worker-0","evento":"consulta","campos":{"chave":"454d3c13","consulta":"menores mem\u00f3ria p\u00e1gina"}}
+{"seq":794,"t":2.773343,"thr":"worker-1","evento":"cache","campos":{"chave":"c6c9d41b","estado":"erro","tempo_s":0.026253}}
+{"seq":795,"t":2.773386,"thr":"worker-1","evento":"recuperacao","campos":{"chave":"c6c9d41b","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006134643999985201}}
+{"seq":796,"t":2.773402,"thr":"worker-1","evento":"geracao","campos":{"chave":"c6c9d41b","tempo_s":0.020092704000035155}}
+{"seq":797,"t":2.78352,"thr":"worker-0","evento":"cache","campos":{"chave":"454d3c13","estado":"erro","tempo_s":0.026312}}
+{"seq":798,"t":2.783553,"thr":"worker-0","evento":"recuperacao","campos":{"chave":"454d3c13","n_trechos":4,"bytes_contexto":8192,"tempo_s":0.006202343000040855}}
+{"seq":799,"t":2.783568,"thr":"worker-0","evento":"geracao","campos":{"chave":"454d3c13","tempo_s":0.02008409799987021}}
+{"seq":800,"t":2.783884,"thr":"MainThread","evento":"encerramento","campos":{"processadas":200,"erros":0}}

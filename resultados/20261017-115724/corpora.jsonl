@@ -1,0 +1,5 @@
+{"n_documentos": 100, "bytes_escritos": 209715200, "seed": 42, "tempo_total_s": 3.5899038720000362, "numpy_version": "2.5.4"}
+{"n_documentos": 100, "n_chunks": 109300, "bytes_lidos": 223692800, "tamanho_corpus_bytes": 209715200, "tamanho_indice_bytes": 227057792, "tamanho_vetores_bytes": 223846528, "tamanho_metadados_bytes": 3211264, "tempo_total_s": 8.423940629000072, "tempo_leitura_s": 0.35572430900185736, "tempo_embedding_s": 7.621373854000808, "tempo_persistencia_s": 0.26587563899920497, "read_mode": "read", "chunk_size": 2048, "overlap": 128, "dim": 512, "batch_size": 256}
+{"n_documentos": 2, "bytes_escritos": 209715200, "seed": 42, "tempo_total_s": 3.232963750999943, "numpy_version": "2.5.4"}
+{"n_documentos": 100, "bytes_escritos": 1048576000, "seed": 42, "tempo_total_s": 15.894255004000115, "numpy_version": "2.5.4"}
+{"n_documentos": 100, "bytes_escritos": 2097152000, "seed": 42, "tempo_total_s": 32.181660757000145, "numpy_version": "2.5.4"}

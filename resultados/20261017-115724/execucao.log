@@ -1,0 +1,237 @@
+[11:57:40] AVISO: há alterações não commitadas; o commit registrado não reproduz exatamente esta execução
+[11:57:25] execução: resultados/20261017-115724
+[11:57:25] parâmetros: REPS=3 REQ=200 WORKERS="1 2 4 8 16" CORPUS=200MiB/100docs C5="200 1000 2000" limite=1220MiB
+[11:57:25] duração estimada da bateria oficial: 30–60 min (mais se o disco for lento ou houver swap no C5)
+[11:57:25] AVISO: nenhum sensor de temperatura exposto (comum em WSL/VM); só frequência e uso da CPU serão registrados. Acompanhe a temperatura pelo sistema hospedeiro.
+[11:57:25] gerando corpus 200 MiB / 100 documentos em data/exp/corpus_200mb_100d
+corpus gerado em data/exp/corpus_200mb_100d
+[11:57:29] ingerindo data/exp/corpus_200mb_100d → data/exp/store_200mb_100d_read
+índice gravado em data/exp/store_200mb_100d_read
+[11:57:37] ===== AMBIENTE =====
+ambiente registrado em resultados/20261017-115724/ambiente
+[11:57:44] AMBIENTE concluída em 7 s
+[11:57:44] ===== C12 =====
+[11:57:44] gerando corpus 200 MiB / 2 documentos em data/exp/corpus_200mb_2d
+corpus gerado em data/exp/corpus_200mb_2d
+[11:57:47] C1/C2 ingestão rep 1 modo read (frio e quente)
+[11:58:07] C1/C2 ingestão rep 1 modo mmap (frio e quente)
+[11:58:27] C1/C2 ingestão rep 2 modo mmap (frio e quente)
+[11:58:48] C1/C2 ingestão rep 2 modo read (frio e quente)
+[11:59:08] C1/C2 ingestão rep 3 modo read (frio e quente)
+[11:59:28] C1/C2 ingestão rep 3 modo mmap (frio e quente)
+[11:59:48] C1/C2 conferência com tools.bench_query
+[11:59:53] C1/C2 strace -c da ingestão (read) — tempos desta execução não são usados
+[12:00:28] C1/C2 strace -c da ingestão (mmap) — tempos desta execução não são usados
+[12:00:38] C12 concluída em 174 s
+[12:00:38] ===== C3 =====
+C3_w1 rep=1: 5.625936s, pid=6430
+C3_w1 rep=2: 5.549356s, pid=6469
+C3_w1 rep=3: 5.554369s, pid=6487
+C3_w2 rep=1: 2.877931s, pid=6505
+C3_w2 rep=2: 2.921579s, pid=6525
+C3_w2 rep=3: 3.014776s, pid=6544
+C3_w4 rep=1: 2.01352s, pid=6561
+C3_w4 rep=2: 1.725254s, pid=6582
+C3_w4 rep=3: 1.913808s, pid=6601
+C3_w8 rep=1: 1.634273s, pid=6620
+C3_w8 rep=2: 1.612918s, pid=6645
+C3_w8 rep=3: 1.565375s, pid=6687
+C3_w16 rep=1: 1.49032s, pid=6712
+C3_w16 rep=2: 1.583354s, pid=6745
+C3_w16 rep=3: 1.513283s, pid=6776
+Resultados: resultados/20261017-115724/c3/gen20/real
+C3_w1 rep=1: 1.550024s, pid=6819
+C3_w1 rep=2: 1.417289s, pid=6838
+C3_w1 rep=3: 1.409319s, pid=6854
+C3_w2 rep=1: 1.735303s, pid=6870
+C3_w2 rep=2: 1.760096s, pid=6889
+C3_w2 rep=3: 1.744008s, pid=6907
+C3_w4 rep=1: 1.772358s, pid=6924
+C3_w4 rep=2: 1.506346s, pid=6945
+C3_w4 rep=3: 1.509838s, pid=6964
+C3_w8 rep=1: 1.492697s, pid=6983
+C3_w8 rep=2: 1.593198s, pid=7008
+C3_w8 rep=3: 1.55129s, pid=7031
+C3_w16 rep=1: 1.584946s, pid=7054
+C3_w16 rep=2: 1.566685s, pid=7087
+C3_w16 rep=3: 1.64448s, pid=7119
+Resultados: resultados/20261017-115724/c3/gen0/real
+[12:01:44] C3 evidência de threads (servidor com 4 workers e 2 produtores)
+[12:01:48] C3 strace -c do servidor (futex = sincronização entre threads)
+[12:01:50] C3 concluída em 72 s
+[12:01:51] ===== C4 =====
+AVISO: C4 sem cache (linha de base).
+C4_repetida rep=1: 3.023143s, pid=7330
+C4_repetida rep=2: 3.158642s, pid=7348
+C4_repetida rep=3: 3.221622s, pid=7368
+C4_distinta rep=1: 3.062461s, pid=7387
+C4_distinta rep=2: 3.11938s, pid=7404
+C4_distinta rep=3: 2.971788s, pid=7423
+C4_mista rep=1: 3.02824s, pid=7440
+C4_mista rep=2: 3.01303s, pid=7460
+C4_mista rep=3: 2.998814s, pid=7498
+Resultados: resultados/20261017-115724/c4/sem_cache/real
+C4_repetida rep=1: 0.294784s, pid=7527
+C4_repetida rep=2: 0.321109s, pid=7545
+C4_repetida rep=3: 0.344626s, pid=7562
+C4_distinta rep=1: 2.947937s, pid=7579
+C4_distinta rep=2: 2.989109s, pid=7598
+C4_distinta rep=3: 2.949301s, pid=7617
+C4_mista rep=1: 1.319385s, pid=7635
+C4_mista rep=2: 1.327169s, pid=7652
+C4_mista rep=3: 1.329933s, pid=7671
+Resultados: resultados/20261017-115724/c4/safe/real
+C4_repetida rep=1: 0.285939s, pid=7700
+C4_repetida rep=2: 0.307101s, pid=7718
+C4_repetida rep=3: 0.299663s, pid=7735
+C4_distinta rep=1: 3.046912s, pid=7752
+C4_distinta rep=2: 2.826885s, pid=7771
+C4_distinta rep=3: 3.021543s, pid=7788
+C4_mista rep=1: 1.42333s, pid=7808
+C4_mista rep=2: 1.352499s, pid=7845
+C4_mista rep=3: 1.262079s, pid=7866
+Resultados: resultados/20261017-115724/c4/single_flight/real
+C4_repetida rep=1: 1.81103s, pid=7895
+C4_repetida rep=2: 1.526359s, pid=7913
+C4_repetida rep=3: 1.616357s, pid=7932
+C4_distinta rep=1: 2.95138s, pid=7949
+C4_distinta rep=2: 3.23646s, pid=7968
+C4_distinta rep=3: 2.884696s, pid=7986
+C4_mista rep=1: 2.430201s, pid=8005
+C4_mista rep=2: 2.523924s, pid=8022
+C4_mista rep=3: 2.631753s, pid=8041
+Resultados: resultados/20261017-115724/c4/cap4_lru/real
+C4_repetida rep=1: 1.671803s, pid=8070
+C4_repetida rep=2: 1.723869s, pid=8090
+C4_repetida rep=3: 1.810475s, pid=8108
+C4_distinta rep=1: 3.024184s, pid=8146
+C4_distinta rep=2: 3.088149s, pid=8165
+C4_distinta rep=3: 2.986089s, pid=8184
+C4_mista rep=1: 2.741322s, pid=8201
+C4_mista rep=2: 2.36278s, pid=8221
+C4_mista rep=3: 2.575069s, pid=8238
+Resultados: resultados/20261017-115724/c4/cap4_fifo/real
+[12:03:32] C4 concluída em 101 s
+[12:03:32] ===== CONTEXTO =====
+C5_context2048 rep=1: 2.880604s, pid=8278
+C5_context2048 rep=2: 3.085164s, pid=8296
+C5_context2048 rep=3: 2.993449s, pid=8315
+C5_context8192 rep=1: 2.932712s, pid=8334
+C5_context8192 rep=2: 2.923633s, pid=8371
+C5_context8192 rep=3: 2.895526s, pid=8390
+Resultados: resultados/20261017-115724/contexto/real
+[12:03:50] CONTEXTO concluída em 18 s
+[12:03:50] ===== C5 =====
+[12:03:50] C5 ingestão 200 MiB rep 1
+[12:03:59] C5 ingestão 200 MiB rep 2
+[12:04:08] C5 ingestão 200 MiB rep 3
+[12:04:17] C5 consultas 200 MiB rep 1 vectors_mmap=0 cache=frio
+[12:04:17] C5 consultas 200 MiB rep 1 vectors_mmap=0 cache=quente
+[12:04:18] C5 consultas 200 MiB rep 1 vectors_mmap=1 cache=frio
+[12:04:19] C5 consultas 200 MiB rep 1 vectors_mmap=1 cache=quente
+[12:04:19] C5 consultas 200 MiB rep 2 vectors_mmap=0 cache=frio
+[12:04:20] C5 consultas 200 MiB rep 2 vectors_mmap=0 cache=quente
+[12:04:35] C5 consultas 200 MiB rep 2 vectors_mmap=1 cache=frio
+[12:04:21] C5 consultas 200 MiB rep 2 vectors_mmap=1 cache=quente
+[12:04:21] C5 consultas 200 MiB rep 3 vectors_mmap=0 cache=frio
+[12:04:22] C5 consultas 200 MiB rep 3 vectors_mmap=0 cache=quente
+[12:04:23] C5 consultas 200 MiB rep 3 vectors_mmap=1 cache=frio
+[12:04:23] C5 consultas 200 MiB rep 3 vectors_mmap=1 cache=quente
+[12:04:24] gerando corpus 1000 MiB / 100 documentos em data/exp/corpus_1000mb_100d
+corpus gerado em data/exp/corpus_1000mb_100d
+[12:04:40] C5 ingestão 1000 MiB rep 1
+[12:05:24] C5 ingestão 1000 MiB rep 2
+[12:06:10] C5 ingestão 1000 MiB rep 3
+[12:06:56] C5 consultas 1000 MiB rep 1 vectors_mmap=0 cache=frio
+[12:06:59] C5 consultas 1000 MiB rep 1 vectors_mmap=0 cache=quente
+[12:07:01] C5 consultas 1000 MiB rep 1 vectors_mmap=1 cache=frio
+[12:07:03] C5 consultas 1000 MiB rep 1 vectors_mmap=1 cache=quente
+[12:07:05] C5 consultas 1000 MiB rep 2 vectors_mmap=0 cache=frio
+[12:07:07] C5 consultas 1000 MiB rep 2 vectors_mmap=0 cache=quente
+[12:07:10] C5 consultas 1000 MiB rep 2 vectors_mmap=1 cache=frio
+[12:07:11] C5 consultas 1000 MiB rep 2 vectors_mmap=1 cache=quente
+[12:07:13] C5 consultas 1000 MiB rep 3 vectors_mmap=0 cache=frio
+[12:07:15] C5 consultas 1000 MiB rep 3 vectors_mmap=0 cache=quente
+[12:07:18] C5 consultas 1000 MiB rep 3 vectors_mmap=1 cache=frio
+[12:07:19] C5 consultas 1000 MiB rep 3 vectors_mmap=1 cache=quente
+[12:07:21] gerando corpus 2000 MiB / 100 documentos em data/exp/corpus_2000mb_100d
+corpus gerado em data/exp/corpus_2000mb_100d
+[12:07:54] C5 ingestão 2000 MiB rep 1
+[12:09:24] C5 ingestão 2000 MiB rep 2
+[12:11:09] C5 ingestão 2000 MiB rep 3
+[12:12:37] C5 consultas 2000 MiB rep 1 vectors_mmap=0 cache=frio
+[12:12:42] C5 consultas 2000 MiB rep 1 vectors_mmap=0 cache=quente
+[12:12:47] C5 consultas 2000 MiB rep 1 vectors_mmap=1 cache=frio
+[12:12:49] C5 consultas 2000 MiB rep 1 vectors_mmap=1 cache=quente
+[12:12:54] C5 consultas 2000 MiB rep 2 vectors_mmap=0 cache=frio
+[12:12:57] C5 consultas 2000 MiB rep 2 vectors_mmap=0 cache=quente
+[12:13:01] C5 consultas 2000 MiB rep 2 vectors_mmap=1 cache=frio
+[12:13:04] C5 consultas 2000 MiB rep 2 vectors_mmap=1 cache=quente
+[12:13:09] C5 consultas 2000 MiB rep 3 vectors_mmap=0 cache=frio
+[12:13:12] C5 consultas 2000 MiB rep 3 vectors_mmap=0 cache=quente
+[12:13:17] C5 consultas 2000 MiB rep 3 vectors_mmap=1 cache=frio
+[12:13:20] C5 consultas 2000 MiB rep 3 vectors_mmap=1 cache=quente
+[12:13:24] C5 limite de memória: 1220 MiB via systemd sobre o índice de 2000 MiB (timeout 300s)
+[12:14:43] C5 limite rep 1 vectors_mmap=0: código de saída 0 em 79 s
+[12:14:49] C5 limite rep 1 vectors_mmap=1: código de saída 0 em 6 s
+[12:15:38] C5 limite rep 2 vectors_mmap=0: código de saída 0 em 49 s
+[12:15:45] C5 limite rep 2 vectors_mmap=1: código de saída 0 em 7 s
+[12:16:40] C5 limite rep 3 vectors_mmap=0: código de saída 0 em 55 s
+[12:16:48] C5 limite rep 3 vectors_mmap=1: código de saída 0 em 8 s
+[12:16:48] C5 concluída em 778 s
+[12:16:48] ===== C6 =====
+C6_fila_saturada rep=1: 0.48205s, pid=10112
+C6_fila_saturada rep=2: 0.392957s, pid=10129
+C6_fila_saturada rep=3: 0.378236s, pid=10145
+Resultados: resultados/20261017-115724/c6/fila/real
+[12:16:50] C6 preparando cenários de falha de armazenamento em data/exp/falhas
+corpus gerado em data/exp/falhas/corpus
+índice gravado em data/exp/falhas/store
+índice gravado em data/exp/falhas/store_corpus_apagado
+índice gravado em data/exp/falhas/store_corpus_alterado
+[12:16:53] C6 concluída em 5 s
+[12:16:53] ===== D =====
+cache/unsafe: ok
+cache/safe: ok
+cache/single-flight: ok
+log/none: ok
+log/lock: ok
+log/queue: ok
+cache/unsafe: ok
+cache/safe: ok
+cache/single-flight: ok
+log/none: ok
+log/lock: ok
+log/queue: ok
+cache/unsafe: ok
+cache/safe: ok
+cache/single-flight: ok
+log/none: ok
+log/lock: ok
+log/queue: ok
+cache/unsafe: ok
+cache/safe: ok
+cache/single-flight: ok
+log/none: ok
+log/lock: ok
+log/queue: ok
+cache/unsafe: ok
+cache/safe: ok
+cache/single-flight: ok
+log/none: ok
+log/lock: ok
+log/queue: ok
+cache/unsafe: ok
+cache/safe: ok
+cache/single-flight: ok
+log/none: ok
+log/lock: ok
+log/queue: ok
+[12:17:15] D concluída em 22 s
+[12:17:16] ===== GRAFICOS =====
+11 figura(s) em resultados/20261017-115724/graficos, tabelas em resultados/20261017-115724/tabelas.md
+[12:17:19] GRAFICOS concluída em 3 s
+[12:17:19] ================================================================
+[12:17:19] resultados em resultados/20261017-115724
+[12:17:19] todas as etapas concluídas
+[12:17:19] para versionar: git add resultados/20261017-115724 && git commit -m "resultados: bateria 20261017-115724"

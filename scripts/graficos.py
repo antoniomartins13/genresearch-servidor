@@ -190,7 +190,9 @@ def tabela_ag(ag: list[dict], colunas: list[tuple[str, str, int | None]]) -> str
         for _, chave, casas in colunas:
             ln.append(str(d.get(chave, "—")) if casas is None else fmt_mdp(d, chave, casas))
         linhas.append(ln)
-    return tabela_md([c[0] for c in colunas], linhas)
+    # métricas sem nenhum valor neste ambiente (ex.: /proc/self/io ausente no WSL) saem da tabela
+    manter = [j for j, c in enumerate(colunas) if c[2] is None or any(ln[j] != "—" for ln in linhas)]
+    return tabela_md([colunas[j][0] for j in manter], [[ln[j] for j in manter] for ln in linhas])
 
 
 def virgula(ax, eixos: str = "y") -> None:
@@ -290,9 +292,17 @@ def secao_cabecalho(R: Relatorio) -> None:
     R.md.append(f"# Resultados da execução `{R.run.name}`\n")
     if meta.get("rapido"):
         R.p("> **PILOTO (`--rapido`)**: parâmetros reduzidos. Não use estes números no relatório.\n")
-    if meta.get("alteracoes_locais"):
-        R.p("> Aviso: havia alterações não commitadas no momento da execução "
+    alt = R.run / "git_alteracoes_locais.txt"
+    alteracoes = [ln for ln in (alt.read_text().splitlines() if alt.exists() else [])
+                  if ln.strip() and not ln[3:].startswith("resultados/")]
+    if alteracoes:
+        R.p("> Aviso: havia alterações de código não commitadas no momento da execução "
             "(ver `git_alteracoes_locais.txt`).\n")
+    if amb.get("wsl"):
+        R.p("> Ambiente WSL2: o Linux roda numa VM. O disco é um arquivo virtual do Windows (VHDX), "
+            "então o \"cache frio\" esvazia o page cache do Linux, mas o Windows pode manter o disco "
+            "virtual no cache dele; não há sensor de temperatura nem `/proc/self/io`, e a frequência "
+            "em `/proc/cpuinfo` é fixa.\n")
     linhas_amb = [
         ["Comando", f"`{meta.get('comando', '—')}`"],
         ["Commit", f"`{meta.get('commit', '—')}`"],
@@ -303,11 +313,15 @@ def secao_cabecalho(R: Relatorio) -> None:
         ["CPU", f"{amb.get('cpu_modelo', '—')} ({amb.get('cpus_logicas', '—')} CPUs lógicas)"],
         ["RAM / swap", f"{amb.get('mem_total_mib', meta.get('mem_total_mib', '—'))} MiB / {amb.get('swap_total_mib', '—')} MiB (swappiness {amb.get('swappiness', '—')})"],
         ["Sistema de arquivos / tipo de disco", f"{amb.get('sistema_arquivos', '—')} / "
-         + {"1": "rotacional (HDD)", "0": "não rotacional (SSD/NVMe)"}.get(str(amb.get("disco_rotacional")), "—")],
+         + ("disco virtual do WSL (o tipo físico não é visível no Linux)" if amb.get("wsl") else
+            {"1": "rotacional (HDD)", "0": "não rotacional (SSD/NVMe)"}.get(str(amb.get("disco_rotacional")), "—"))],
         ["GPU", str(amb.get("gpu") or "nenhuma")],
         ["Python / numpy", f"{amb.get('python', meta.get('python', '—'))} / {amb.get('numpy', meta.get('numpy', '—'))}"],
         ["Corpus base", f"{meta.get('corpus_mb', '—')} MiB em {meta.get('docs', '—')} documentos (seed {meta.get('seed_corpus', '—')})"],
     ]
+    if meta.get("openblas_num_threads") or meta.get("omp_num_threads"):
+        linhas_amb.append(["Threads do BLAS (numpy)", f"OPENBLAS_NUM_THREADS={meta.get('openblas_num_threads') or '—'}, "
+                                                      f"OMP_NUM_THREADS={meta.get('omp_num_threads') or '—'}"])
     R.h("Ambiente e parâmetros (Parte A)")
     R.p(tabela_md(["Item", "Valor"], linhas_amb))
     st = R.run / "status.txt"
@@ -345,8 +359,12 @@ def secao_c12(R: Relatorio) -> None:
     barras(axs[1, 0], modos, {"pico RssAnon": [val(achar(ag, read_mode=m, cache="frio"), "pico_anon_mib") for m in modos],
                               "pico RssFile": [val(achar(ag, read_mode=m, cache="frio"), "pico_file_mib") for m in modos]},
            "MiB", "Ingestão a frio: pico de memória residente", cores=[CORES[2], CORES[3]])
-    barras(axs[1, 1], caches, {m: [val(achar(ag, read_mode=m, cache=c), "disco_lido_mib") for c in caches] for m in modos},
-           "MiB lidos do dispositivo", "Ingestão: E/S real de disco (/proc/self/io)")
+    if any(d.get("disco_lido_mib_media") is not None for d in ag):
+        barras(axs[1, 1], caches, {m: [val(achar(ag, read_mode=m, cache=c), "disco_lido_mib") for c in caches] for m in modos},
+               "MiB lidos do dispositivo", "Ingestão: E/S real de disco (/proc/self/io)")
+    else:
+        barras(axs[1, 1], caches, {m: [val(achar(ag, read_mode=m, cache=c), "majflt") for c in caches] for m in modos},
+               "faltas de página maiores", "Ingestão: faltas de página maiores")
     R.salvar_fig(fig, "c12_ingestao")
     R.p(tabela_ag(ag, [("Modo", "read_mode", None), ("Cache", "cache", None),
                        ("Leitura (s)", "tempo_leitura_s", 3), ("Total (s)", "tempo_total_s", 2),
@@ -675,7 +693,10 @@ def secao_c3(R: Relatorio) -> None:
             ("Bloqueio dos produtores (s)", "bloqueio_prod_s", 2), ("Threads", "threads", 0),
             ("Pico RSS (MiB)", "pico_rss_mib", 1), ("Desbalanceamento entre workers (%)", "desbalanceamento_pct", 1)]))
     R.p("\nDesbalanceamento = (máx − mín de consultas atendidas por worker) / total. "
-        "Valores altos indicam workers ociosos ou starvation.")
+        "Valores altos indicam workers ociosos ou starvation. Threads = threads do processo ao final "
+        "da execução, depois que os workers terminaram; inclui threads criadas por bibliotecas "
+        "(o numpy usa um pool próprio de threads do BLAS). CPU (%) é relativa a 1 CPU e inclui o "
+        "tempo dessas threads de biblioteca.")
 
     t = D / "threads" / "tarefas.txt"
     if t.exists() and t.read_text().strip():
@@ -834,13 +855,16 @@ def secao_c5(R: Relatorio) -> None:
             ds = [d for d in agc if d["_vet"] == v and d["cache"] == c]
             return [d["_mib"] for d in ds], [val(d, m)[0] for d in ds], [val(d, m)[1] for d in ds]
 
-        fig, axs = plt.subplots(1, 3, figsize=(15, 4.5))
-        linhas(axs[0], {v: serie(v, "quente", "anon_fim_mib") for v in vets}, "corpus (MiB)", "MiB",
+        fig, axs = plt.subplots(2, 2, figsize=(12, 8))
+        linhas(axs[0, 0], {v: serie(v, "quente", "anon_fim_mib") for v in vets}, "corpus (MiB)", "MiB",
                "RssAnon (memória anônima) após as consultas")
-        linhas(axs[1], {v: serie(v, "quente", "file_fim_mib") for v in vets}, "corpus (MiB)", "MiB",
+        linhas(axs[0, 1], {v: serie(v, "quente", "file_fim_mib") for v in vets}, "corpus (MiB)", "MiB",
                "RssFile (páginas de arquivo mapeadas)")
-        linhas(axs[2], {v: serie(v, "quente", "vsz_fim_mib") for v in vets}, "corpus (MiB)", "MiB",
+        linhas(axs[1, 0], {v: serie(v, "quente", "vsz_fim_mib") for v in vets}, "corpus (MiB)", "MiB",
                "VmSize (memória virtual, VSZ)")
+        linhas(axs[1, 1], {v: serie(v, "quente", "memavail_delta_mib") for v in vets}, "corpus (MiB)", "MiB",
+               "Variação de MemAvailable do sistema durante a execução")
+        axs[1, 1].axhline(0, color="#888", lw=0.8)
         R.salvar_fig(fig, "c5_memoria")
 
         fig, axs = plt.subplots(1, 3, figsize=(15, 4.5))
@@ -848,8 +872,8 @@ def secao_c5(R: Relatorio) -> None:
                "corpus (MiB)", "segundos", "Abertura do índice (carga de vectors.npy)")
         linhas(axs[1], {v: serie(v, "quente", "busca_p95_ms") for v in vets}, "corpus (MiB)", "ms",
                "Busca vetorial p95 (cache quente)")
-        linhas(axs[2], {v: serie(v, "frio", "consultas_disco_mib") for v in vets}, "corpus (MiB)",
-               "MiB lidos do dispositivo", "E/S de disco durante as consultas (cache frio)")
+        linhas(axs[2], {v: serie(v, "frio", "total_p95_ms") for v in vets}, "corpus (MiB)", "ms",
+               "Recuperação p95 a frio (inclui primeiros acessos)")
         R.salvar_fig(fig, "c5_latencia")
 
         R.h("Consultas por tamanho de corpus", 3)
@@ -913,15 +937,24 @@ def secao_c5_limite(R: Relatorio, D: Path) -> None:
         virgula(axs[0])
         if vm:
             t = list(range(len(vm)))
-            axs[1].plot(t, [(r.get("si") or 0) / 1024 for r in vm], label="swap in (MiB/s)", color=CORES[1])
-            axs[1].plot(t, [(r.get("so") or 0) / 1024 for r in vm], label="swap out (MiB/s)", color=CORES[3])
-            axs[1].plot(t, [(r.get("bi") or 0) / 1024 for r in vm], label="leitura de bloco (MiB/s)", color=CORES[0])
+            outras = [max(0.0, ((r.get("bi") or 0) - (r.get("si") or 0)) / 1024) for r in vm]
+            axs[1].plot(t, outras, label="outras leituras de bloco, bi − si (MiB/s)", color=CORES[0], lw=0.8, alpha=0.7)
+            axs[1].plot(t, [(r.get("si") or 0) / 1024 for r in vm], label="swap in (MiB/s)", color=CORES[1], lw=1.4)
+            axs[1].plot(t, [(r.get("so") or 0) / 1024 for r in vm], label="swap out (MiB/s)", color=CORES[3], lw=1.4)
             axs[1].set_xlabel("segundos desde o início da etapa")
             axs[1].set_title("vmstat durante as execuções com limite", fontsize=10)
             axs[1].legend(fontsize=8)
             axs[1].grid(alpha=0.3)
             virgula(axs[1])
         R.salvar_fig(fig, "c5_limite", nota="série temporal bruta (sem média entre repetições)")
+        if vm:
+            si = sum((r.get("si") or 0) for r in vm) / 1024 / 1024
+            so = sum((r.get("so") or 0) for r in vm) / 1024 / 1024
+            pico = max((r.get("si") or 0) for r in vm) / 1024
+            R.p(f"\nSoma bruta das amostras do vmstat durante as execuções com limite ({len(vm)} s): "
+                f"{fmt(si, 1)} GiB de swap-in e {fmt(so, 1)} GiB de swap-out (maior amostra de swap-in: "
+                f"{fmt(pico, 0)} MiB/s). Amostras isoladas muito acima das vizinhas devem ser tratadas com "
+                "cautela; os campos por processo (VmSwap e faltas maiores) são a evidência mais direta.")
 
 
 def secao_c6(R: Relatorio) -> None:

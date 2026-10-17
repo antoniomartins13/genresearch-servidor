@@ -1,0 +1,11 @@
+{
+  "sensor": null,
+  "fonte_temperatura": null,
+  "temp_critica_c": null,
+  "fonte_frequencia": "/proc/cpuinfo",
+  "freq_max_nominal_mhz": null,
+  "throttle_disponivel": false,
+  "cpus": 12,
+  "intervalo_s": 1.0,
+  "observacao": "sem sensor de temperatura exposto (comum em WSL e VMs); acompanhe pelo sistema hospedeiro"
+}
